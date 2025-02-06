@@ -43,8 +43,14 @@ struct FavoriteScreen: View {
     @ViewBuilder
     func content() -> some View {
         VStack {
-            Text("Favorite")
+            Spacer()
+            Text(R.string.localizable.favorite.localizedKeyString)
+                .frame(maxWidth: .infinity)
+            Spacer()
         }
+        .background(Color.surface)
+        .navigationTitle(R.string.localizable.favorite.localizedKeyString)
+        .navigationBarTitleDisplayMode(.inline)
 //        ScrollView {
 //            LazyVStack(spacing: 0) {
 //                if store.list.models.count > 0 {

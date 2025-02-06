@@ -64,8 +64,14 @@ struct DashboardScreen: View {
     @ViewBuilder
     func content() -> some View {
         VStack {
-            Text("Dashboard")
+            Spacer()
+            Text(R.string.localizable.dashboard.localizedKeyString)
+                .frame(maxWidth: .infinity)
+            Spacer()
         }
+        .background(Color.surface)
+        .navigationTitle(R.string.localizable.dashboard.localizedKeyString)
+        .navigationBarTitleDisplayMode(.inline)
     }
     
 //    @ViewBuilder

@@ -1,0 +1,6 @@
+framework module SwiftUI_WebView_Hi {
+  umbrella header "SwiftUI-WebView-Hi-umbrella.h"
+
+  export *
+  module * { export * }
+}

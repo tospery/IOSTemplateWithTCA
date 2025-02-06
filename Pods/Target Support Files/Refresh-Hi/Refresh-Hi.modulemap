@@ -1,0 +1,6 @@
+framework module Refresh_Hi {
+  umbrella header "Refresh-Hi-umbrella.h"
+
+  export *
+  module * { export * }
+}

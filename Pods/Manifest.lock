@@ -1,0 +1,214 @@
+PODS:
+  - Alamofire (5.10.2)
+  - AlertToast-Hi (1.3.9.1)
+  - Combine-Realm-Hi (2.0.1-v2):
+    - RealmSwift (~> 10.0)
+  - CombineExt (1.8.0)
+  - DeviceKit (5.5.0)
+  - Domain (1.0.0):
+    - HiBase (~> 1.0)
+  - ExytePopupView (3.1.4):
+    - SwiftUIIntrospect
+  - FancyScrollView-Hi (0.1.4-v1)
+  - FCUUID (1.3.1):
+    - UICKeyChainStore (~> 2.1.0)
+  - HiBase (1.1.0):
+    - ObjectMapper (~> 4.0)
+    - SwifterSwift/Foundation (~> 6.0)
+    - SwifterSwift/SwiftStdlib (~> 6.0)
+  - HiCore (1.1.0):
+    - DeviceKit (~> 5.0)
+    - FCUUID (~> 1.0)
+    - HiBase (~> 1.0)
+    - HiLog/Core (~> 1.0)
+    - SwifterSwift/CoreGraphics (~> 6.0)
+    - SwifterSwift/UIKit (~> 6.0)
+  - HiLog/Core (1.1.0)
+  - HiLog/SwiftyBeaver (1.1.0):
+    - HiLog/Core
+    - SwiftyBeaver (~> 2.0)
+  - HiNav/Combine (1.1.0):
+    - HiNav/Core
+  - HiNav/Core (1.1.0):
+    - HiBase (~> 1.0)
+    - SwifterSwift/UIKit (~> 6.0)
+  - HiNet/Combine (1.1.0):
+    - HiNet/Core
+    - Moya/Combine (~> 15.0)
+  - HiNet/Core (1.1.0):
+    - Moya/Core (~> 15.0)
+    - ObjectMapper (~> 4.0)
+  - HiRealm (1.1.0):
+    - HiBase (~> 1.0)
+    - RealmSwift (~> 10.0)
+  - HiResource (1.1.1)
+  - HiStats/Console (1.1.0):
+    - HiLog/Core (~> 1.0)
+    - HiStats/Core
+  - HiStats/Core (1.1.0)
+  - HiSwiftUI (1.1.0):
+    - CombineExt (~> 1.0)
+    - HiCore (~> 1.0)
+    - HiNav/Combine (~> 1.0)
+    - HiNet/Combine (~> 1.0)
+    - HiResource (~> 1.0)
+    - Kingfisher (~> 7.0)
+    - Refresh-Hi (~> 0.2)
+    - SFSafeSymbols (~> 5.0)
+    - SwifterSwift (~> 6.0)
+    - SwiftUIKit-Hi (~> 5.0.0)
+  - Kingfisher (7.12.0)
+  - Moya/Combine (15.0.0):
+    - Moya/Core
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
+  - NetworkPlatform (1.0.0):
+    - Domain
+    - HiCore (~> 1.0)
+    - HiNet/Combine (~> 1.0)
+  - ObjectMapper (4.4.2)
+  - R.swift (7.8.0)
+  - Realm (10.54.2):
+    - Realm/Headers (= 10.54.2)
+  - Realm/Headers (10.54.2)
+  - RealmPlatform (1.0.0):
+    - Combine-Realm-Hi (= 2.0.1-v2)
+    - Domain
+    - HiRealm (~> 1.0)
+  - RealmSwift (10.54.2):
+    - Realm (= 10.54.2)
+  - Refresh-Hi (0.2.1)
+  - SFSafeSymbols (5.3.0)
+  - SwifterSwift (6.2.0):
+    - SwifterSwift/AppKit (= 6.2.0)
+    - SwifterSwift/Combine (= 6.2.0)
+    - SwifterSwift/CoreAnimation (= 6.2.0)
+    - SwifterSwift/CoreGraphics (= 6.2.0)
+    - SwifterSwift/CoreLocation (= 6.2.0)
+    - SwifterSwift/CryptoKit (= 6.2.0)
+    - SwifterSwift/Dispatch (= 6.2.0)
+    - SwifterSwift/Foundation (= 6.2.0)
+    - SwifterSwift/HealthKit (= 6.2.0)
+    - SwifterSwift/MapKit (= 6.2.0)
+    - SwifterSwift/SceneKit (= 6.2.0)
+    - SwifterSwift/SpriteKit (= 6.2.0)
+    - SwifterSwift/StoreKit (= 6.2.0)
+    - SwifterSwift/SwiftStdlib (= 6.2.0)
+    - SwifterSwift/UIKit (= 6.2.0)
+    - SwifterSwift/WebKit (= 6.2.0)
+  - SwifterSwift/AppKit (6.2.0)
+  - SwifterSwift/Combine (6.2.0)
+  - SwifterSwift/CoreAnimation (6.2.0)
+  - SwifterSwift/CoreGraphics (6.2.0)
+  - SwifterSwift/CoreLocation (6.2.0)
+  - SwifterSwift/CryptoKit (6.2.0)
+  - SwifterSwift/Dispatch (6.2.0)
+  - SwifterSwift/Foundation (6.2.0)
+  - SwifterSwift/HealthKit (6.2.0)
+  - SwifterSwift/MapKit (6.2.0)
+  - SwifterSwift/SceneKit (6.2.0)
+  - SwifterSwift/SpriteKit (6.2.0)
+  - SwifterSwift/StoreKit (6.2.0)
+  - SwifterSwift/SwiftStdlib (6.2.0)
+  - SwifterSwift/UIKit (6.2.0)
+  - SwifterSwift/WebKit (6.2.0)
+  - SwiftUI-WebView-Hi (0.3.0.2)
+  - SwiftUIIntrospect (1.3.0)
+  - SwiftUIKit-Hi (5.0.0.1)
+  - SwiftyBeaver (2.1.1)
+  - UICKeyChainStore (2.1.2)
+
+DEPENDENCIES:
+  - AlertToast-Hi (~> 1.3.9)
+  - Domain (from `./Domain`)
+  - ExytePopupView (~> 3.1)
+  - FancyScrollView-Hi (= 0.1.4-v1)
+  - HiLog/SwiftyBeaver (= 1.1.0)
+  - HiStats/Console (= 1.1.0)
+  - HiSwiftUI (= 1.1.0)
+  - NetworkPlatform (from `./NetworkPlatform`)
+  - R.swift (~> 7.0)
+  - RealmPlatform (from `./RealmPlatform`)
+  - SwiftUI-WebView-Hi (~> 0.3.0)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - AlertToast-Hi
+    - Combine-Realm-Hi
+    - CombineExt
+    - DeviceKit
+    - ExytePopupView
+    - FancyScrollView-Hi
+    - FCUUID
+    - HiBase
+    - HiCore
+    - HiLog
+    - HiNav
+    - HiNet
+    - HiRealm
+    - HiResource
+    - HiStats
+    - HiSwiftUI
+    - Kingfisher
+    - Moya
+    - ObjectMapper
+    - R.swift
+    - Realm
+    - RealmSwift
+    - Refresh-Hi
+    - SFSafeSymbols
+    - SwifterSwift
+    - SwiftUI-WebView-Hi
+    - SwiftUIIntrospect
+    - SwiftUIKit-Hi
+    - SwiftyBeaver
+    - UICKeyChainStore
+
+EXTERNAL SOURCES:
+  Domain:
+    :path: "./Domain"
+  NetworkPlatform:
+    :path: "./NetworkPlatform"
+  RealmPlatform:
+    :path: "./RealmPlatform"
+
+SPEC CHECKSUMS:
+  Alamofire: 7193b3b92c74a07f85569e1a6c4f4237291e7496
+  AlertToast-Hi: 488f268dafa8d02348859c0362c35bc96363b0a5
+  Combine-Realm-Hi: 596d4b8f883b3e0eeef0afc69c4fdb224ee9922b
+  CombineExt: c4daa97ef75754d8ef319bd79edeef82652f3eea
+  DeviceKit: d83e38ca196a4ebf0cc5f37d6f0316a24b794d5b
+  Domain: 4a15f2ab75f8770c7510ce386d5d608bc7a5577e
+  ExytePopupView: 917d8cda1d9a5e4353bbc53659dc840a0eb2bae3
+  FancyScrollView-Hi: f212eccbe063d5093eca837934a02d15eae7fba1
+  FCUUID: bb054fc90cd7cd99320f9f6ff8e130fe607fba05
+  HiBase: 596cc668dfdaa2e0dfe5fe03a3bf76f6d9607e34
+  HiCore: 4aef90362858da437839b71a92e861eb3d3148c0
+  HiLog: 24fa8d10939c673ee18292bff50aa84acbe835d7
+  HiNav: 52aabb59277d88edfee77d444eddbdd257143865
+  HiNet: 3aff497fd04a41881a6ec0ffda9b18d50918399a
+  HiRealm: 4e3a89a15f991e5cb375994257df6ae13b3936f9
+  HiResource: b2fa2e3f6ad581c9c66a971577bca0e2551d72bb
+  HiStats: 2c7bc388a52962ec1265f78ae7e1ea825d29fe7a
+  HiSwiftUI: 47a1d3156e1a7d7fa24b702859a92d5c7ab30444
+  Kingfisher: 53a10ea35051a436b5fb626ca2dd8f3144d755e9
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
+  NetworkPlatform: 7d1056f4aba0ffc12d14f6915f1f469448ea4f22
+  ObjectMapper: e6e4d91ff7f2861df7aecc536c92d8363f4c9677
+  R.swift: f573269ca45b2ab066c082e363dd4c2b297b0d71
+  Realm: 16852517a207e98cc6acba9336b56c30d06d84ad
+  RealmPlatform: 3b4efe780ebfcb4607d96ac5fc8883b12d04d95c
+  RealmSwift: bca777b3904ee58a9b16036e1840012f03348060
+  Refresh-Hi: ba5a5d5008318a2689036ea66cb1e4f3958c3162
+  SFSafeSymbols: c0244d55ef543c7b2c01f3af2d3d2dd9e26dd00c
+  SwifterSwift: dd00873fb09cde19da88bdb2878f9fe70fe27b0f
+  SwiftUI-WebView-Hi: c9bd0b61c4c84df675c8a45090d9a2b5c48a0a4e
+  SwiftUIIntrospect: fee9aa07293ee280373a591e1824e8ddc869ba5d
+  SwiftUIKit-Hi: 43b5df4f366354f37deacfe77477113f6b4f47c6
+  SwiftyBeaver: ade157e4f857812e7d7f15f2e3396bb8733f8a1c
+  UICKeyChainStore: 85db518bb1d294366d15ec9b92a416c4e670518f
+
+PODFILE CHECKSUM: 23d7db3fa404691989b98c83d40256436c218f2c
+
+COCOAPODS: 1.16.2

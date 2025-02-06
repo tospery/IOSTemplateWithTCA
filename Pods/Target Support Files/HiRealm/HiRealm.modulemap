@@ -1,0 +1,6 @@
+framework module HiRealm {
+  umbrella header "HiRealm-umbrella.h"
+
+  export *
+  module * { export * }
+}

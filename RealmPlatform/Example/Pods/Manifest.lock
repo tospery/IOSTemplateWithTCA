@@ -1,0 +1,59 @@
+PODS:
+  - Combine-Realm-Hi (2.0.1-v2):
+    - RealmSwift (~> 10.0)
+  - Domain (1.0.0):
+    - HiBase (~> 1.0)
+  - HiBase (1.1.0):
+    - ObjectMapper (~> 4.0)
+    - SwifterSwift/Foundation (~> 6.0)
+    - SwifterSwift/SwiftStdlib (~> 6.0)
+  - HiRealm (1.1.0):
+    - HiBase (~> 1.0)
+    - RealmSwift (~> 10.0)
+  - ObjectMapper (4.4.2)
+  - Realm (10.54.2):
+    - Realm/Headers (= 10.54.2)
+  - Realm/Headers (10.54.2)
+  - RealmPlatform (1.0.0):
+    - Combine-Realm-Hi (= 2.0.1-v2)
+    - Domain
+    - HiRealm (~> 1.0)
+  - RealmSwift (10.54.2):
+    - Realm (= 10.54.2)
+  - SwifterSwift/Foundation (6.2.0)
+  - SwifterSwift/SwiftStdlib (6.2.0)
+
+DEPENDENCIES:
+  - Domain (from `../../Domain`)
+  - RealmPlatform (from `../`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Combine-Realm-Hi
+    - HiBase
+    - HiRealm
+    - ObjectMapper
+    - Realm
+    - RealmSwift
+    - SwifterSwift
+
+EXTERNAL SOURCES:
+  Domain:
+    :path: "../../Domain"
+  RealmPlatform:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Combine-Realm-Hi: 596d4b8f883b3e0eeef0afc69c4fdb224ee9922b
+  Domain: 4a15f2ab75f8770c7510ce386d5d608bc7a5577e
+  HiBase: 596cc668dfdaa2e0dfe5fe03a3bf76f6d9607e34
+  HiRealm: 4e3a89a15f991e5cb375994257df6ae13b3936f9
+  ObjectMapper: e6e4d91ff7f2861df7aecc536c92d8363f4c9677
+  Realm: 16852517a207e98cc6acba9336b56c30d06d84ad
+  RealmPlatform: 3b4efe780ebfcb4607d96ac5fc8883b12d04d95c
+  RealmSwift: bca777b3904ee58a9b16036e1840012f03348060
+  SwifterSwift: dd00873fb09cde19da88bdb2878f9fe70fe27b0f
+
+PODFILE CHECKSUM: d55bbd08b74b34289dcc2f34e887cdba8c2a8e9b
+
+COCOAPODS: 1.16.2

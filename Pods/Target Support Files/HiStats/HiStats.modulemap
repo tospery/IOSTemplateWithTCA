@@ -1,0 +1,6 @@
+framework module HiStats {
+  umbrella header "HiStats-umbrella.h"
+
+  export *
+  module * { export * }
+}

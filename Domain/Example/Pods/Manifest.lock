@@ -1,0 +1,33 @@
+PODS:
+  - Domain (1.0.0):
+    - HiBase (~> 1.0)
+  - HiBase (1.1.0):
+    - ObjectMapper (~> 4.0)
+    - SwifterSwift/Foundation (~> 6.0)
+    - SwifterSwift/SwiftStdlib (~> 6.0)
+  - ObjectMapper (4.4.2)
+  - SwifterSwift/Foundation (6.2.0)
+  - SwifterSwift/SwiftStdlib (6.2.0)
+
+DEPENDENCIES:
+  - Domain (from `../`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - HiBase
+    - ObjectMapper
+    - SwifterSwift
+
+EXTERNAL SOURCES:
+  Domain:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Domain: 4a15f2ab75f8770c7510ce386d5d608bc7a5577e
+  HiBase: 596cc668dfdaa2e0dfe5fe03a3bf76f6d9607e34
+  ObjectMapper: e6e4d91ff7f2861df7aecc536c92d8363f4c9677
+  SwifterSwift: dd00873fb09cde19da88bdb2878f9fe70fe27b0f
+
+PODFILE CHECKSUM: 0495b0441cea3d983a39c569c80b1d6663045a57
+
+COCOAPODS: 1.16.2

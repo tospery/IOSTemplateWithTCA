@@ -1,0 +1,82 @@
+PODS:
+  - Alamofire (5.10.2)
+  - DeviceKit (5.5.0)
+  - Domain (1.0.0):
+    - HiBase (~> 1.0)
+  - FCUUID (1.3.1):
+    - UICKeyChainStore (~> 2.1.0)
+  - HiBase (1.1.0):
+    - ObjectMapper (~> 4.0)
+    - SwifterSwift/Foundation (~> 6.0)
+    - SwifterSwift/SwiftStdlib (~> 6.0)
+  - HiCore (1.1.0):
+    - DeviceKit (~> 5.0)
+    - FCUUID (~> 1.0)
+    - HiBase (~> 1.0)
+    - HiLog/Core (~> 1.0)
+    - SwifterSwift/CoreGraphics (~> 6.0)
+    - SwifterSwift/UIKit (~> 6.0)
+  - HiLog/Core (1.1.0)
+  - HiNet/Combine (1.1.0):
+    - HiNet/Core
+    - Moya/Combine (~> 15.0)
+  - HiNet/Core (1.1.0):
+    - Moya/Core (~> 15.0)
+    - ObjectMapper (~> 4.0)
+  - Moya/Combine (15.0.0):
+    - Moya/Core
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
+  - NetworkPlatform (1.0.0):
+    - Domain
+    - HiCore (~> 1.0)
+    - HiNet/Combine (~> 1.0)
+  - ObjectMapper (4.4.2)
+  - SwifterSwift/CoreGraphics (6.2.0)
+  - SwifterSwift/Foundation (6.2.0)
+  - SwifterSwift/SwiftStdlib (6.2.0)
+  - SwifterSwift/UIKit (6.2.0)
+  - UICKeyChainStore (2.1.2)
+
+DEPENDENCIES:
+  - Domain (from `../../Domain`)
+  - NetworkPlatform (from `../`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - DeviceKit
+    - FCUUID
+    - HiBase
+    - HiCore
+    - HiLog
+    - HiNet
+    - Moya
+    - ObjectMapper
+    - SwifterSwift
+    - UICKeyChainStore
+
+EXTERNAL SOURCES:
+  Domain:
+    :path: "../../Domain"
+  NetworkPlatform:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Alamofire: 7193b3b92c74a07f85569e1a6c4f4237291e7496
+  DeviceKit: d83e38ca196a4ebf0cc5f37d6f0316a24b794d5b
+  Domain: 4a15f2ab75f8770c7510ce386d5d608bc7a5577e
+  FCUUID: bb054fc90cd7cd99320f9f6ff8e130fe607fba05
+  HiBase: 596cc668dfdaa2e0dfe5fe03a3bf76f6d9607e34
+  HiCore: 4aef90362858da437839b71a92e861eb3d3148c0
+  HiLog: 24fa8d10939c673ee18292bff50aa84acbe835d7
+  HiNet: 3aff497fd04a41881a6ec0ffda9b18d50918399a
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
+  NetworkPlatform: 7d1056f4aba0ffc12d14f6915f1f469448ea4f22
+  ObjectMapper: e6e4d91ff7f2861df7aecc536c92d8363f4c9677
+  SwifterSwift: dd00873fb09cde19da88bdb2878f9fe70fe27b0f
+  UICKeyChainStore: 85db518bb1d294366d15ec9b92a416c4e670518f
+
+PODFILE CHECKSUM: 5b5a8b9277154b5b84848f3cc9192aa1ec16c992
+
+COCOAPODS: 1.16.2

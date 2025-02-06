@@ -7,18 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09C264E6CF7CBF55A6F3D980 /* Pods_IOSTemplateWithTCA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00CB69640C73899D18586129 /* Pods_IOSTemplateWithTCA.framework */; };
 		9141F7552D549CAB006E7D37 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9141F74F2D549CAB006E7D37 /* Preview Assets.xcassets */; };
 		9141F7562D549CAB006E7D37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9141F7512D549CAB006E7D37 /* Assets.xcassets */; };
 		9141F7572D549CAB006E7D37 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9141F7522D549CAB006E7D37 /* ContentView.swift */; };
 		9141F7582D549CAB006E7D37 /* IOSTemplateWithTCAApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9141F7532D549CAB006E7D37 /* IOSTemplateWithTCAApp.swift */; };
+		9141F7612D54AA4F006E7D37 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9141F7602D54AA4F006E7D37 /* R.generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00CB69640C73899D18586129 /* Pods_IOSTemplateWithTCA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOSTemplateWithTCA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B65E7F0CAC9DA027EBE6297 /* Pods-IOSTemplateWithTCA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSTemplateWithTCA.release.xcconfig"; path = "Target Support Files/Pods-IOSTemplateWithTCA/Pods-IOSTemplateWithTCA.release.xcconfig"; sourceTree = "<group>"; };
 		9141F73E2D549C6B006E7D37 /* IOSTemplateWithTCA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSTemplateWithTCA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9141F74F2D549CAB006E7D37 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9141F7512D549CAB006E7D37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9141F7522D549CAB006E7D37 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9141F7532D549CAB006E7D37 /* IOSTemplateWithTCAApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSTemplateWithTCAApp.swift; sourceTree = "<group>"; };
+		9141F75B2D54A67A006E7D37 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = .swiftlint.yml; path = ../.swiftlint.yml; sourceTree = "<group>"; };
+		9141F7602D54AA4F006E7D37 /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		B2521D9D9661463D3A733E04 /* Pods-IOSTemplateWithTCA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSTemplateWithTCA.debug.xcconfig"; path = "Target Support Files/Pods-IOSTemplateWithTCA/Pods-IOSTemplateWithTCA.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09C264E6CF7CBF55A6F3D980 /* Pods_IOSTemplateWithTCA.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		513EAF441ADA4A1C5F5C2E6F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00CB69640C73899D18586129 /* Pods_IOSTemplateWithTCA.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8E2B104A1859F032BCCDF3E3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B2521D9D9661463D3A733E04 /* Pods-IOSTemplateWithTCA.debug.xcconfig */,
+				4B65E7F0CAC9DA027EBE6297 /* Pods-IOSTemplateWithTCA.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		9141F7352D549C6B006E7D37 = {
 			isa = PBXGroup;
 			children = (
 				9141F7542D549CAB006E7D37 /* IOSTemplateWithTCA */,
 				9141F73F2D549C6B006E7D37 /* Products */,
+				8E2B104A1859F032BCCDF3E3 /* Pods */,
+				513EAF441ADA4A1C5F5C2E6F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,12 +86,22 @@
 		9141F7542D549CAB006E7D37 /* IOSTemplateWithTCA */ = {
 			isa = PBXGroup;
 			children = (
+				9141F7592D54A5B4006E7D37 /* App */,
+			);
+			path = IOSTemplateWithTCA;
+			sourceTree = "<group>";
+		};
+		9141F7592D54A5B4006E7D37 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				9141F7602D54AA4F006E7D37 /* R.generated.swift */,
 				9141F7502D549CAB006E7D37 /* Preview Content */,
 				9141F7512D549CAB006E7D37 /* Assets.xcassets */,
 				9141F7522D549CAB006E7D37 /* ContentView.swift */,
 				9141F7532D549CAB006E7D37 /* IOSTemplateWithTCAApp.swift */,
+				9141F75B2D54A67A006E7D37 /* .swiftlint.yml */,
 			);
-			path = IOSTemplateWithTCA;
+			name = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,17 +111,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9141F74C2D549C6C006E7D37 /* Build configuration list for PBXNativeTarget "IOSTemplateWithTCA" */;
 			buildPhases = (
+				69F06FB2AF7DBE5D82E63720 /* [CP] Check Pods Manifest.lock */,
+				9141F75E2D54A8D9006E7D37 /* R.swift */,
+				9141F75F2D54A92D006E7D37 /* SwiftLint */,
 				9141F73A2D549C6B006E7D37 /* Sources */,
 				9141F73B2D549C6B006E7D37 /* Frameworks */,
 				9141F73C2D549C6B006E7D37 /* Resources */,
+				7BE4151E84CB50832C5C21C9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = IOSTemplateWithTCA;
-			packageProductDependencies = (
-			);
 			productName = IOSTemplateWithTCA;
 			productReference = 9141F73E2D549C6B006E7D37 /* IOSTemplateWithTCA.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +152,10 @@
 			);
 			mainGroup = 9141F7352D549C6B006E7D37;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				9141F75C2D54A824006E7D37 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				9141F75D2D54A83D006E7D37 /* XCRemoteSwiftPackageReference "swift-dependencies-additions" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 9141F73F2D549C6B006E7D37 /* Products */;
 			projectDirPath = "";
@@ -135,6 +178,87 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		69F06FB2AF7DBE5D82E63720 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IOSTemplateWithTCA-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7BE4151E84CB50832C5C21C9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IOSTemplateWithTCA/Pods-IOSTemplateWithTCA-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IOSTemplateWithTCA/Pods-IOSTemplateWithTCA-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IOSTemplateWithTCA/Pods-IOSTemplateWithTCA-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9141F75E2D54A8D9006E7D37 /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = R.swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/IOSTemplateWithTCA/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/IOSTemplateWithTCA/R.generated.swift\"\n";
+		};
+		9141F75F2D54A92D006E7D37 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\n\nexport PATH\n\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9141F73A2D549C6B006E7D37 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -142,6 +266,7 @@
 			files = (
 				9141F7572D549CAB006E7D37 /* ContentView.swift in Sources */,
 				9141F7582D549CAB006E7D37 /* IOSTemplateWithTCAApp.swift in Sources */,
+				9141F7612D54AA4F006E7D37 /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +394,7 @@
 		};
 		9141F74D2D549C6C006E7D37 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2521D9D9661463D3A733E04 /* Pods-IOSTemplateWithTCA.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -277,6 +403,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"IOSTemplateWithTCA/Preview Content\"";
 				DEVELOPMENT_TEAM = WDE622528T;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -303,6 +430,7 @@
 		};
 		9141F74E2D549C6C006E7D37 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B65E7F0CAC9DA027EBE6297 /* Pods-IOSTemplateWithTCA.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -311,6 +439,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"IOSTemplateWithTCA/Preview Content\"";
 				DEVELOPMENT_TEAM = WDE622528T;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -357,6 +486,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9141F75C2D54A824006E7D37 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = exactVersion;
+				version = 1.16.1;
+			};
+		};
+		9141F75D2D54A83D006E7D37 /* XCRemoteSwiftPackageReference "swift-dependencies-additions" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tgrapperon/swift-dependencies-additions";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 9141F7362D549C6B006E7D37 /* Project object */;
 }

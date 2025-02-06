@@ -1,0 +1,6 @@
+framework module FancyScrollView_Hi {
+  umbrella header "FancyScrollView-Hi-umbrella.h"
+
+  export *
+  module * { export * }
+}

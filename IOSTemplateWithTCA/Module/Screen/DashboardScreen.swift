@@ -72,6 +72,8 @@ struct DashboardScreen: View {
         .background(Color.surface)
         .navigationTitle(R.string.localizable.dashboard.localizedKeyString)
         .navigationBarTitleDisplayMode(.inline)
+        .onAppear { stats(.beginPageView(name: self.className)) }
+        .onDisappear { stats(.endPageView(name: self.className)) }
     }
     
 //    @ViewBuilder

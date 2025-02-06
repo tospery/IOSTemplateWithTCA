@@ -14,11 +14,9 @@ import Domain
 struct PersonalParallaxHeader: View {
     
     let user: Domain.User?
-    let action: ((PageType?) -> Void)
     
-    init(user: Domain.User?, action: @escaping (PageType?) -> Void) {
+    init(_ user: Domain.User?) {
         self.user = user
-        self.action = action
     }
     
     var body: some View {

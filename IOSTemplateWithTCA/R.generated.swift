@@ -341,12 +341,15 @@ struct _R {
     var accentColor: RswiftResources.ColorResource { .init(name: "AccentColor", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 10 images.
+  /// This `_R.image` struct is generated, and contains static references to 11 images.
   struct image {
     let bundle: Foundation.Bundle
 
     /// Image `AppLogo`.
     var appLogo: RswiftResources.ImageResource { .init(name: "AppLogo", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `about_icon`.
+    var about_icon: RswiftResources.ImageResource { .init(name: "about_icon", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `dashboard_normal_icon`.
     var dashboard_normal_icon: RswiftResources.ImageResource { .init(name: "dashboard_normal_icon", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }

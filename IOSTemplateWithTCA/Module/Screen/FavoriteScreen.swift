@@ -51,6 +51,8 @@ struct FavoriteScreen: View {
         .background(Color.surface)
         .navigationTitle(R.string.localizable.favorite.localizedKeyString)
         .navigationBarTitleDisplayMode(.inline)
+        .onAppear { stats(.beginPageView(name: self.className)) }
+        .onDisappear { stats(.endPageView(name: self.className)) }
 //        ScrollView {
 //            LazyVStack(spacing: 0) {
 //                if store.list.models.count > 0 {

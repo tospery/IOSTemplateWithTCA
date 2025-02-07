@@ -34,23 +34,11 @@ struct PersonalReducer {
         case load
     }
     
-    private enum CancelID { case load }
-    
     var body: some Reducer<State, Action> {
         BindingReducer()
         Scope(state: \.route, action: \.route) { RouteReducer.init() }
-        Reduce { state, action in
+        Reduce { _, action in
             switch action {
-            case .load:
-//                state.milestone = ""
-//                guard let urlString = state.profile.user?.milestone else { return .none }
-//                return .run { send in
-//                    let milestone = await self.platformClient.network().dynamicService()
-//                        .file(urlString: urlString, baseString: UIApplication.shared.baseApiUrl)
-//                        .asOutput() as? String ?? ""
-//                    await send(.binding(.set(\.milestone, milestone)))
-//                }.cancellable(id: CancelID.load)
-                return .none
             default:
                 return .none
             }

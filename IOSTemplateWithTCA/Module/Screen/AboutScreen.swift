@@ -27,9 +27,9 @@ struct AboutScreen: View {
     var body: some View {
         WithPerceptionTracking {
             ScrollView {
-//                VStack(spacing: 0) {
-//                    ForEach(store.list.models) { cell($0) }
-//                }
+                VStack(spacing: 0) {
+                    ForEach(store.list.models) { cell($0) }
+                }
             }
             .background(Color.surface)
             .navigationTitle(R.string.localizable.about.localizedStringKey)
@@ -45,43 +45,18 @@ struct AboutScreen: View {
         }
     }
     
-//    @ViewBuilder
-//    func cell(_ model: Tile) -> some View {
-//        let id = TileId(rawValue: model.id) ?? .space
-//        if id == .logo {
-//            AboutLogoCell {
-//                store.send(.increment)
-//            }
-//        } else {
-//            TileCell(model) {
-//                if let target = model.target {
-//                    store.send(.target(target))
-//                } else {
-//                    let id = TileId(rawValue: model.id) ?? .space
-//                    if id == .share {
-//                        share()
-//                    }
-//                }
-//            }
-//        }
-//    }
-//    
-//    func share() {
-//        let title = UIApplication.shared.name
-//        let content = R.string.localizable.appMessage.localizedString
-//        let url = R.string.constant.appDownloadLink()
-//        let avatar = R.string.constant.appOnlineLogo()
-//        store.send(.target(
-//            HiNav.shared.popupDeepLink(
-//                PopupType.share.rawValue,
-//                [
-//                    Parameter.title: title,
-//                    Parameter.content: content,
-//                    Parameter.avatar: avatar,
-//                    Parameter.url: url
-//                ].jsonString() ?? ""
-//            )
-//        ))
-//    }
+    @ViewBuilder
+    func cell(_ model: Tile) -> some View {
+        let id = TileId(rawValue: model.id) ?? .space
+        if id == .logo {
+            AboutLogoCell { }
+        } else {
+            TileCell(model) {
+                if let target = model.target {
+                    store.send(.target(target))
+                }
+            }
+        }
+    }
     
 }

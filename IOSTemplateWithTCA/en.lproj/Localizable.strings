@@ -11,8 +11,11 @@
 "Personal" = "Personal";
 "Login" = "Login";
 "About" = "About";
+"Exit" = "Exit";
 // MARK: 词语
-"LatestUpdate" = "Update %@";
+"ClickToLogin" = "Click to Login";
+// MARK: 句子 - Sheet
+"Sheet.Logout.Message" = "Confirm logout？";
 // MARK: 句子 - Error
 "Error.None.Title" = "Placeholder Error";
 "Error.None.Message" = "Placeholder Error";

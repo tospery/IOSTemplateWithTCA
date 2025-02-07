@@ -11,8 +11,11 @@
 "Personal" = "我的";
 "Login" = "登录";
 "About" = "关于";
+"Exit" = "退出";
 // MARK: 词语
-"LatestUpdate" = "更新于%@";
+"ClickToLogin" = "点击登录";
+// MARK: 句子 - Sheet
+"Sheet.Logout.Message" = "确认退出？";
 // MARK: 句子 - Error
 "Error.None.Title" = "占位错误";
 "Error.None.Message" = "占位错误";

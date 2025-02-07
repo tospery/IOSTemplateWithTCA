@@ -16,8 +16,8 @@ extension View {
     
     func withRouteHandling(
         route: Store<RouteReducer.State, RouteReducer.Action>,
-        alert: Binding<Store<AlertState<WHAlertAction>, WHAlertAction>?>,
-        sheet: Binding<Store<ConfirmationDialogState<WHAlertAction>, WHAlertAction>?>,
+        alert: Binding<Store<AlertState<ITAlertAction>, ITAlertAction>?>,
+        sheet: Binding<Store<ConfirmationDialogState<ITAlertAction>, ITAlertAction>?>,
         login: Binding<Store<LoginReducer.State, LoginReducer.Action>?>
     ) -> some View {
         self

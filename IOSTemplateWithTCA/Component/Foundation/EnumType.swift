@@ -15,8 +15,10 @@ import HiSwiftUI
 
 enum TileId: String, Hashable, Identifiable, CustomStringConvertible, CaseIterable {
     case space
-    case about
+    case settings, about
     case logo
+    
+    static let unloginValues = [settings, about]
     
     var id: String {
         if self == .space {
@@ -26,7 +28,12 @@ enum TileId: String, Hashable, Identifiable, CustomStringConvertible, CaseIterab
     }
     
     var separated: Bool {
-        true
+        switch self {
+        case .about, .logo:
+            return false
+        default:
+            return true
+        }
     }
     
     var indicated: Bool {
@@ -42,16 +49,20 @@ enum TileId: String, Hashable, Identifiable, CustomStringConvertible, CaseIterab
     }
     
     var target: String? {
-        HiNav.shared.deepLink(host: self.rawValue.lowercased())
+        switch self {
+        case .space, .logo: return nil
+        default: return HiNav.shared.deepLink(host: self.rawValue.lowercased())
+        }
     }
 
 }
 
 @CasePathable
-enum WHAlertAction: AlertActionType, Identifiable, Equatable {
+enum ITAlertAction: AlertActionType, Identifiable, Equatable {
     case destructive
     case `default`
     case cancel
+    case exit
     
     var id: String { description }
     
@@ -71,6 +82,11 @@ enum WHAlertAction: AlertActionType, Identifiable, Equatable {
             R.string.localizable.cancel.key.description.chineseLocalizedString.lowercased()
         ].contains(string.lowercased()) {
             self = .cancel
+        } else if [
+            R.string.localizable.exit.key.description.englishLocalizedString.lowercased(),
+            R.string.localizable.exit.key.description.chineseLocalizedString.lowercased()
+        ].contains(string.lowercased()) {
+            self = .exit
         } else {
             return nil
         }
@@ -81,6 +97,7 @@ enum WHAlertAction: AlertActionType, Identifiable, Equatable {
         case .destructive:  return R.string.localizable.oK.localizedString
         case .default:  return R.string.localizable.sure.localizedString
         case .cancel: return R.string.localizable.cancel.localizedString
+        case .exit: return R.string.localizable.exit.localizedString
         }
     }
 
@@ -99,11 +116,12 @@ enum WHAlertAction: AlertActionType, Identifiable, Equatable {
         }
     }
 
-    static func == (lhs: WHAlertAction, rhs: WHAlertAction) -> Bool {
+    static func == (lhs: ITAlertAction, rhs: ITAlertAction) -> Bool {
         switch (lhs, rhs) {
         case (.destructive, .destructive),
             (.default, .default),
-            (.cancel, .cancel):
+            (.cancel, .cancel),
+            (.exit, .exit):
             return true
         default:
             return false

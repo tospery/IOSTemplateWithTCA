@@ -16,7 +16,6 @@ import HiSwiftUI
 import Domain
 import HiLog
 
-// swiftlint:disable type_body_length
 @Reducer
 struct RouteReducer {
     
@@ -24,8 +23,8 @@ struct RouteReducer {
     struct State: Equatable {
         @Shared(.profile) var profile = .default
         @Presents var login: LoginReducer.State?
-        @Presents var alert: AlertState<WHAlertAction>?
-        @Presents var sheet: ConfirmationDialogState<WHAlertAction>?
+        @Presents var alert: AlertState<ITAlertAction>?
+        @Presents var sheet: ConfirmationDialogState<ITAlertAction>?
         var popup: PopupState?
         var push = StackState<IOSTemplateWithTCA.Push.State>()
         var isActivating = false
@@ -52,8 +51,8 @@ struct RouteReducer {
     enum Action: BindableAction {
         case binding(BindingAction<State>)
         case login(PresentationAction<LoginReducer.Action>)
-        case alert(PresentationAction<WHAlertAction>)
-        case sheet(PresentationAction<WHAlertAction>)
+        case alert(PresentationAction<ITAlertAction>)
+        case sheet(PresentationAction<ITAlertAction>)
         case popup(PopupState?)
         case push(StackActionOf<IOSTemplateWithTCA.Push>)
         case toastMessage(String)
@@ -61,60 +60,60 @@ struct RouteReducer {
     }
     
     @Dependency(\.application) var application
-    private enum CancelID { case load }
     
     var body: some Reducer<State, Action> {
         BindingReducer()
         Reduce { state, action in
             switch action {
-//            case .binding:
-//                return .none
-//            case .login(.dismiss):
-//                guard let redirection = state.redirection, redirection.isNotEmpty else { return .none }
-//                state.redirection = nil
-//                if state.profile.hasLoginedUser {
-//                    log("登录成功，需重定向: \(redirection)")
-//                    return .run { send in
-//                        await send(.target(redirection))
-//                    }
-//                }
-//                return .none
-//            case .alert(.presented(.default)):
-//                log("确认了Alert框")
-//                return .none
-//            case .sheet(.presented(.exit)):
-//                log("关闭了Sheet框")
-//                return .none
-//            case let .popup(popup):
-//                if let popupState = state.popup {
-//                    PopupManager.shared.remove(popupState)
-//                }
-//                state.popup = popup
-//                return .none
-//            case let .push(.element(id: _, action: .about(.target(target)))):
+            case let .toastMessage(message):
+                state.toastMessage = message
+                state.isActivating = false
+                state.showToast = true
+                return .none
+            case .sheet(.presented(.exit)):
+                log("退出了Sheet框")
 //                return .run { send in
-//                    await send(.target(target))
+//                    await send(.target(HiNav.shared.backDeepLink(.dismiss)))
 //                }
-//            case let .toastMessage(message):
-//                state.toastMessage = message
-//                state.isActivating = false
-//                state.showToast = true
-//                return .none
-//            case let .target(target):
-//                let result = HiNav.shared.parse(target)
-//                let should = HiNav.shared.checkNeedLogin(target) && !HiNav.shared.isLogined()
-//                if let effect = self.routeForward(&state, action, target, result, should) {
-//                    return effect
-//                }
-//                if let effect = self.routeBack(&state, action, target, result, should) {
-//                    return effect
-//                }
-//                if let effect = self.routeExternalURL(&state, action, target, result, should) {
-//                    return effect
-//                }
-//                return .none
+                return .none
+            case .alert(.presented(.default)):
+                log("确认了Alert框")
+                return .none
+            case let .popup(popup):
+                if let popupState = state.popup {
+                    PopupManager.shared.remove(popupState)
+                }
+                state.popup = popup
+                return .none
+            case .login(.dismiss):
+                guard let redirection = state.redirection, redirection.isNotEmpty else { return .none }
+                state.redirection = nil
+                if state.profile.hasLoginedUser {
+                    log("登录成功，需重定向: \(redirection)")
+                    return .run { send in
+                        await send(.target(redirection))
+                    }
+                }
+                return .none
+            case let .push(.element(id: _, action: .settings(.target(target)))),
+                let .push(.element(id: _, action: .about(.target(target)))):
+                return .run { send in
+                    await send(.target(target))
+                }
+            case let .target(target):
+                let result = HiNav.shared.parse(target)
+                let should = HiNav.shared.checkNeedLogin(target) && !HiNav.shared.isLogined()
+                if let effect = self.routeForward(&state, action, target, result, should) {
+                    return effect
+                }
+                if let effect = self.routeBack(&state, action, target, result, should) {
+                    return effect
+                }
+                if let effect = self.routeExternalURL(&state, action, target, result, should) {
+                    return effect
+                }
+                return .none
             default:
-                // log("未处理的action: \(action)")
                 return .none
             }
         }
@@ -130,7 +129,8 @@ struct RouteReducer {
         guard let back = result as? BackState else { return nil }
         if back.type == .auto || back.type == .popOne {
             _ = state.push.popLast()
-            return .none
+        } else if back.type == .dismiss {
+            state.login = nil
         }
         return .none
     }
@@ -210,7 +210,7 @@ struct RouteReducer {
     func routeForwardOpenAlert(
         _ state: inout State, _ action: Action, _ target: String, _ result: Any?, _ should: Bool
     ) -> Effect<Action>? {
-        guard let alert = result as? AlertState<WHAlertAction> else { return nil }
+        guard let alert = result as? AlertState<ITAlertAction> else { return nil }
         state.alert = alert
         return .none
     }
@@ -218,7 +218,7 @@ struct RouteReducer {
     func routeForwardOpenSheet(
         _ state: inout State, _ action: Action, _ target: String, _ result: Any?, _ should: Bool
     ) -> Effect<Action>? {
-        guard let sheet = result as? ConfirmationDialogState<WHAlertAction> else { return nil }
+        guard let sheet = result as? ConfirmationDialogState<ITAlertAction> else { return nil }
         state.sheet = sheet
         return .none
     }
@@ -235,7 +235,7 @@ struct RouteReducer {
         _ state: inout State, _ action: Action, _ target: String, _ result: Any?, _ should: Bool
     ) -> Effect<Action>? {
         guard let urlString = result as? String else { return nil }
-        return .run { send in
+        return .run { _ in
             guard let url = urlString.url else { return }
             if await self.application.canOpenURL(url) {
                 _ = await self.application.open(url, options: [:])
@@ -246,4 +246,3 @@ struct RouteReducer {
     }
     
 }
-// swiftlint:enable type_body_length

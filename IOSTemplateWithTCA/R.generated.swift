@@ -82,7 +82,7 @@ struct _R {
       var english: RswiftResources.StringResource { .init(key: "English", tableName: "Constant", source: source, developmentValue: "English", comment: nil) }
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 35 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 37 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -99,6 +99,13 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var cancel: RswiftResources.StringResource { .init(key: "Cancel", tableName: "Localizable", source: source, developmentValue: "Cancel", comment: nil) }
+
+      /// en translation: Click to Login
+      ///
+      /// Key: ClickToLogin
+      ///
+      /// Locales: en, zh-Hans
+      var clickToLogin: RswiftResources.StringResource { .init(key: "ClickToLogin", tableName: "Localizable", source: source, developmentValue: "Click to Login", comment: nil) }
 
       /// en translation: Home
       ///
@@ -261,19 +268,19 @@ struct _R {
       /// Locales: en, zh-Hans
       var errorUserNotLoginedInTitle: RswiftResources.StringResource { .init(key: "Error.User.NotLoginedIn.Title", tableName: "Localizable", source: source, developmentValue: "User not logged in", comment: nil) }
 
+      /// en translation: Exit
+      ///
+      /// Key: Exit
+      ///
+      /// Locales: en, zh-Hans
+      var exit: RswiftResources.StringResource { .init(key: "Exit", tableName: "Localizable", source: source, developmentValue: "Exit", comment: nil) }
+
       /// en translation: Favorite
       ///
       /// Key: Favorite
       ///
       /// Locales: en, zh-Hans
       var favorite: RswiftResources.StringResource { .init(key: "Favorite", tableName: "Localizable", source: source, developmentValue: "Favorite", comment: nil) }
-
-      /// en translation: Update %@
-      ///
-      /// Key: LatestUpdate
-      ///
-      /// Locales: en, zh-Hans
-      var latestUpdate: RswiftResources.StringResource1<String> { .init(key: "LatestUpdate", tableName: "Localizable", source: source, developmentValue: "Update %@", comment: nil) }
 
       /// en translation: Loading
       ///
@@ -310,6 +317,13 @@ struct _R {
       /// Locales: en, zh-Hans
       var personal: RswiftResources.StringResource { .init(key: "Personal", tableName: "Localizable", source: source, developmentValue: "Personal", comment: nil) }
 
+      /// en translation: Confirm logout？
+      ///
+      /// Key: Sheet.Logout.Message
+      ///
+      /// Locales: en, zh-Hans
+      var sheetLogoutMessage: RswiftResources.StringResource { .init(key: "Sheet.Logout.Message", tableName: "Localizable", source: source, developmentValue: "Confirm logout？", comment: nil) }
+
       /// en translation: Sure
       ///
       /// Key: Sure
@@ -341,7 +355,7 @@ struct _R {
     var accentColor: RswiftResources.ColorResource { .init(name: "AccentColor", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 11 images.
+  /// This `_R.image` struct is generated, and contains static references to 12 images.
   struct image {
     let bundle: Foundation.Bundle
 
@@ -377,6 +391,9 @@ struct _R {
 
     /// Image `personal_selected_icon`.
     var personal_selected_icon: RswiftResources.ImageResource { .init(name: "personal_selected_icon", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `settings_icon`.
+    var settings_icon: RswiftResources.ImageResource { .init(name: "settings_icon", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
   }
 
   /// This `_R.file` struct is generated, and contains static references to 2 resource files.

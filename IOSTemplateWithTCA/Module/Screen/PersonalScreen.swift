@@ -33,12 +33,11 @@ struct PersonalScreen: View {
                 FancyScrollView(
                     title: R.string.localizable.personal.localizedKeyString,
                     titleColor: .clear,
-                    headerHeight: 586.0 / 780.0 * screenWidth,
+                    headerHeight: 488.0 / 780.0 * screenWidth,
                     scrollUpHeaderBehavior: .parallax,
                     scrollDownHeaderBehavior: .offset,
                     header: {
-                        PersonalParallaxHeader(store.profile.user)
-                            .onTapGesture { tapUser() }
+                        PersonalParallaxHeader(store.profile.user) { tapPageType($0) }
                     },
                     content: { content() }
                 )
@@ -66,29 +65,29 @@ struct PersonalScreen: View {
         }
     }
     
-    func tapUser() {
-//        if store.profile.hasLoginedUser {
-//            store.send(.route(.target(HiNav.shared.deepLink(host: .profile))))
-//        } else {
-//            store.send(.route(.target(HiNav.shared.deepLink(host: .login))))
-//        }
+    func tapPageType(_ pageType: PageType?) {
+        store.send(.route(.target(HiNav.shared.deepLink(host: .login))))
     }
     
     @ViewBuilder
     func content() -> some View {
         ScrollView {
             VStack(spacing: 0) {
-                TileCell(.init(
-                    id: TileId.about.id,
-                    icon: TileId.about.icon,
-                    title: TileId.about.description,
-                    separated: TileId.about.separated,
-                    indicated: TileId.about.indicated
-                )) {
-                    store.send(.route(.target(TileId.about.target ?? "")))
+                TileCell(.space())
+                ForEach(TileId.unloginValues) { id in
+                    TileCell(.init(
+                        id: id.id,
+                        icon: id.icon,
+                        title: id.description,
+                        separated: id.separated,
+                        indicated: id.indicated
+                    )) {
+                        store.send(.route(.target(TileId.about.target ?? "")))
+                    }
                 }
             }
         }
+        .background(Color.surface)
     }
     
 }

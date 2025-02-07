@@ -61,20 +61,15 @@ struct LoginScreen: View {
     @ViewBuilder
     func content() -> some View {
         VStack {
+            Spacer()
+            Text("模拟成功登录一个用户")
+                .frame(maxWidth: .infinity)
+                .onTapGesture {
+                    store.send(.login)
+                }
+            Spacer()
         }
         .background(Color.surface)
-    }
-    
-    func exit() {
-        dismiss()
-//        store.send(.route(.target(HiNav.shared.sheetDeepLink(
-//            "",
-//            R.string.localizable.sheetLogoutMessage.localizedString,
-//            [
-//                ITAlertAction.exit,
-//                ITAlertAction.cancel
-//            ]
-//        ))))
     }
     
 }

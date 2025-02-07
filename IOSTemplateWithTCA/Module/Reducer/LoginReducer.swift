@@ -32,11 +32,30 @@ struct LoginReducer {
         case user(Result<User, Error>)
     }
     
+    @Dependency(\.dismiss) var dismiss
+    @Dependency(\.continuousClock) var clock
+    
+    private enum CancelID { case login, user }
+    
     var body: some Reducer<State, Action> {
         BindingReducer()
         Scope(state: \.route, action: \.route) { RouteReducer.init() }
-        Reduce { _, action in
+        Reduce { state, action in
             switch action {
+            case .login:
+                return .run { send in
+                    await send(.route(.target(HiNav.shared.toastActivityDeepLink(true))))
+                    try await self.clock.sleep(for: .seconds(3))
+                    await send(.user(.success(User.init(JSON: ["id": "1", "username": "demo"])!)))
+                    await send(.route(.target(HiNav.shared.toastActivityDeepLink(false))))
+                }.cancellable(id: CancelID.login)
+            case let .user(.success(user)):
+                var profile = state.profile
+                profile.user = user
+                state.profile = profile
+                return .run { _ in
+                    await dismiss()
+                }.cancellable(id: CancelID.user)
             default:
                 return .none
             }

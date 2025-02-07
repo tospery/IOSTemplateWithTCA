@@ -76,16 +76,13 @@ struct RootScreen: View {
                 .toolbar(.visible, for: .tabBar)
                 .navigationTitle(Text(store.tabBarItemType.title))
                 .navigationBarTitleDisplayMode(.inline)
-//                .tint((store.profile.colorTheme ?? .red).swiftUIColor)
-//                .environment(\.locale, (store.profile.localization ?? .english).locale)
-//                .environment(\.colorScheme, (store.profile.isDark ?? false) ? .dark : .light)
                 .onOpenURL { handleURL($0) }
                 .onChange(of: store.profile) { profile in
                     log("profile变化了: \(profile)")
                     profileService.send(profile)
                     store.send(.binding(.set(\.profile, profile)))
                 }
-                // .overlay(alignment: .bottom) { overlay() }
+                .overlay(alignment: .bottom) { overlay() }
                 .onAppear {
                     stats(.beginPageView(name: self.className))
                     store.send(.load)
@@ -105,14 +102,7 @@ struct RootScreen: View {
             HStack(spacing: 0) {
                 Rectangle()
                     .fill(Color.clear)
-                    .frame(width: screenWidth / 4.0, height: tabBarHeight - safeArea.bottom)
-                    .contentShape(.rect)
-                    .onTapGesture {
-                        store.send(.login)
-                    }
-                Rectangle()
-                    .fill(Color.clear)
-                    .frame(width: screenWidth / 4.0, height: tabBarHeight - safeArea.bottom)
+                    .frame(width: screenWidth / 3.0, height: tabBarHeight - safeArea.bottom)
                     .contentShape(.rect)
                     .onTapGesture {
                         store.send(.login)

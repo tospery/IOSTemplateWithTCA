@@ -132,42 +132,6 @@ struct ListReducer<Model: ModelType> {
             }
         } else {
             if !state.isLoadingMore && !models.isEmpty {
-//                if state.host == .eventList {
-//                    log("开始保存到数据库---事件")
-//                    return .run { _ in
-//                        _ = await self.platformClient.database().eventService()
-//                            .save(events: unsafeBitCast(models, to: [Event].self))
-//                            .asResult()
-//                    }
-//                }
-//                if state.page == .stars {
-//                    log("开始保存到数据库---收藏")
-//                    return .run { _ in
-//                        _ = await self.platformClient.database().repoService()
-//                            .save(repos: unsafeBitCast(models, to: [Repo].self))
-//                            .asResult()
-//                    }
-//                }
-//                if state.page == .trendingRepos {
-//                    log("开始保存到数据库---趋势repo")
-//                    if models is [Repo] {
-//                        return .run { _ in
-//                            _ = await self.platformClient.database().repoService()
-//                                .save(repos: unsafeBitCast(models, to: [Repo].self))
-//                                .asResult()
-//                        }
-//                    }
-//                }
-//                if state.page == .trendingUsers {
-//                    log("开始保存到数据库---趋势user")
-//                    if models is [User] {
-//                        return .run { _ in
-//                            _ = await self.platformClient.database().userService()
-//                                .save(users: unsafeBitCast(models, to: [User].self))
-//                                .asResult()
-//                        }
-//                    }
-//                }
             }
         }
         return .none
@@ -182,30 +146,12 @@ struct ListReducer<Model: ModelType> {
     }
     
     func requestFavorite(_ state: inout State, _ action: Action, _ mode: HiRequestMode) -> Effect<Action> {
-//        let owner = state.owner.isEmpty ? (state.profile.user?.username ?? "") : state.owner
         let pageIndex = mode == .loadMore ? state.pageIndex : state.pageStart
-        let pageSize = state.pageSize
         return .run { send in
             if mode == .load {
                 await send(.binding(.set(\.fromDatabase, true)))
-//                await send(.models(
-//                    unsafeBitCast(
-//                        await self.platformClient.database().repoService()
-//                            .starred(owner: owner, pageIndex: pageIndex, pageSize: pageSize)
-//                            .asResult(),
-//                        to: Result<[Model], Error>.self
-//                    )
-//                ))
                 await send(.binding(.set(\.fromDatabase, false)))
             }
-//            await send(.models(
-//                unsafeBitCast(
-//                    await self.platformClient.network().repoService()
-//                        .starred(owner: owner, pageIndex: pageIndex, pageSize: pageSize)
-//                        .asResult(),
-//                    to: Result<[Model], Error>.self
-//                )
-//            ))
             if mode == .refresh {
                 await send(.binding(.set(\.isRefreshing, false)))
             } else if mode == .loadMore {

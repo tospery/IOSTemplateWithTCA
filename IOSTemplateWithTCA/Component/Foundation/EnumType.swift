@@ -15,10 +15,11 @@ import HiSwiftUI
 
 enum TileId: String, Hashable, Identifiable, CustomStringConvertible, CaseIterable {
     case space
-    case settings, about
-    case logo
+    case blog, about
+    case logo, toast, alert, sheet, popup, logic
     
-    static let unloginValues = [settings, about]
+    static let unloginValues = [space, blog, about]
+    static let aboutValues = [logo, toast, alert, sheet, popup, logic]
     
     var id: String {
         if self == .space {
@@ -29,7 +30,7 @@ enum TileId: String, Hashable, Identifiable, CustomStringConvertible, CaseIterab
     
     var separated: Bool {
         switch self {
-        case .about, .logo:
+        case .about, .logo, .logic:
             return false
         default:
             return true
@@ -50,7 +51,8 @@ enum TileId: String, Hashable, Identifiable, CustomStringConvertible, CaseIterab
     
     var target: String? {
         switch self {
-        case .space, .logo: return nil
+        case .space, .logo, .toast, .alert, .sheet, .popup, .logic: return nil
+        case .blog: return "https://blog.csdn.net/tospery"
         default: return HiNav.shared.deepLink(host: self.rawValue.lowercased())
         }
     }

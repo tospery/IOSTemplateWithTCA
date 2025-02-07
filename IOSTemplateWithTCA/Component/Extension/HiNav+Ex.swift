@@ -19,14 +19,12 @@ import Domain
 @Reducer(state: .equatable)
 enum Push {
     case about(AboutReducer)
-    case settings(SettingsReducer)
     case web(WebReducer)
     
     @ViewBuilder
     static func destination(_ store: Store<Push.State, Push.Action>) -> some View {
         switch store.case {
         case let .about(store): AboutScreen(store: store)
-        case let .settings(store): SettingsScreen(store: store)
         case let .web(store): WebScreen(store: store)
         }
     }
@@ -38,7 +36,6 @@ extension HiNavHost {
     static var favorite: HiNavHost { "favorite" }
     static var personal: HiNavHost { "personal" }
     
-    static var settings: HiNavHost { TileId.settings.rawValue.lowercased() }
     static var about: HiNavHost { TileId.about.rawValue.lowercased() }
 }
 
@@ -132,7 +129,6 @@ extension HiNav: @retroactive HiNavCompatible {
         }
         switch forwardType! {
         case .push:
-            if host == .settings { return IOSTemplateWithTCA.Push.State.settings(.init(url: target)) }
             if host == .about { return IOSTemplateWithTCA.Push.State.about(.init(url: target)) }
             if host == .web { return IOSTemplateWithTCA.Push.State.web(.init(url: target)) }
         case .present:

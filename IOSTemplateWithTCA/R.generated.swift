@@ -82,7 +82,7 @@ struct _R {
       var english: RswiftResources.StringResource { .init(key: "English", tableName: "Constant", source: source, developmentValue: "English", comment: nil) }
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 37 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 38 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -92,6 +92,13 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var about: RswiftResources.StringResource { .init(key: "About", tableName: "Localizable", source: source, developmentValue: "About", comment: nil) }
+
+      /// en translation: Blog
+      ///
+      /// Key: Blog
+      ///
+      /// Locales: en, zh-Hans
+      var blog: RswiftResources.StringResource { .init(key: "Blog", tableName: "Localizable", source: source, developmentValue: "Blog", comment: nil) }
 
       /// en translation: Cancel
       ///
@@ -365,6 +372,9 @@ struct _R {
     /// Image `about_icon`.
     var about_icon: RswiftResources.ImageResource { .init(name: "about_icon", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
+    /// Image `blog_icon`.
+    var blog_icon: RswiftResources.ImageResource { .init(name: "blog_icon", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
     /// Image `dashboard_normal_icon`.
     var dashboard_normal_icon: RswiftResources.ImageResource { .init(name: "dashboard_normal_icon", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
@@ -391,9 +401,6 @@ struct _R {
 
     /// Image `personal_selected_icon`.
     var personal_selected_icon: RswiftResources.ImageResource { .init(name: "personal_selected_icon", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
-
-    /// Image `settings_icon`.
-    var settings_icon: RswiftResources.ImageResource { .init(name: "settings_icon", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
   }
 
   /// This `_R.file` struct is generated, and contains static references to 2 resource files.

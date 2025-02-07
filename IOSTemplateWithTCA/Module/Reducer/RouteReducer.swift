@@ -95,8 +95,7 @@ struct RouteReducer {
                     }
                 }
                 return .none
-            case let .push(.element(id: _, action: .settings(.target(target)))),
-                let .push(.element(id: _, action: .about(.target(target)))):
+            case let .push(.element(id: _, action: .about(.target(target)))):
                 return .run { send in
                     await send(.target(target))
                 }

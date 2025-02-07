@@ -73,16 +73,17 @@ struct PersonalScreen: View {
     func content() -> some View {
         ScrollView {
             VStack(spacing: 0) {
-                TileCell(.space())
                 ForEach(TileId.unloginValues) { id in
                     TileCell(.init(
                         id: id.id,
+                        style: id == .space ? .space : .plain,
                         icon: id.icon,
-                        title: id.description,
+                        title: id == .blog ? id.target : id.description,
                         separated: id.separated,
-                        indicated: id.indicated
+                        indicated: id.indicated,
+                        autoLinked: false
                     )) {
-                        store.send(.route(.target(TileId.about.target ?? "")))
+                        store.send(.route(.target(id.target ?? "")))
                     }
                 }
             }

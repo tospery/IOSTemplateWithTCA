@@ -65,8 +65,6 @@
 		9141F7DC2D54BA1A006E7D37 /* DependenciesAdditions in Frameworks */ = {isa = PBXBuildFile; productRef = 9141F7DB2D54BA1A006E7D37 /* DependenciesAdditions */; };
 		9141F7DE2D54BC92006E7D37 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9141F7DD2D54BC92006E7D37 /* Launch Screen.storyboard */; };
 		9141F7E02D54BDE3006E7D37 /* default-v0.realm in Resources */ = {isa = PBXBuildFile; fileRef = 9141F7DF2D54BDE3006E7D37 /* default-v0.realm */; };
-		9141F7E22D565AC4006E7D37 /* SettingsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9141F7E12D565AC0006E7D37 /* SettingsReducer.swift */; };
-		9141F7E42D565ACF006E7D37 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9141F7E32D565ACC006E7D37 /* SettingsScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -133,8 +131,6 @@
 		9141F7A82D54B9F1006E7D37 /* default-v0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "default-v0.swift"; sourceTree = "<group>"; };
 		9141F7DD2D54BC92006E7D37 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		9141F7DF2D54BDE3006E7D37 /* default-v0.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "default-v0.realm"; sourceTree = "<group>"; };
-		9141F7E12D565AC0006E7D37 /* SettingsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsReducer.swift; sourceTree = "<group>"; };
-		9141F7E32D565ACC006E7D37 /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		B2521D9D9661463D3A733E04 /* Pods-IOSTemplateWithTCA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSTemplateWithTCA.debug.xcconfig"; path = "Target Support Files/Pods-IOSTemplateWithTCA/Pods-IOSTemplateWithTCA.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -315,7 +311,6 @@
 		9141F7982D54B9F1006E7D37 /* Reducer */ = {
 			isa = PBXGroup;
 			children = (
-				9141F7E12D565AC0006E7D37 /* SettingsReducer.swift */,
 				9141F78E2D54B9F1006E7D37 /* AboutReducer.swift */,
 				9141F78F2D54B9F1006E7D37 /* DashboardReducer.swift */,
 				9141F7902D54B9F1006E7D37 /* FavoriteReducer.swift */,
@@ -333,7 +328,6 @@
 		9141F7A12D54B9F1006E7D37 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				9141F7E32D565ACC006E7D37 /* SettingsScreen.swift */,
 				9141F7992D54B9F1006E7D37 /* AboutScreen.swift */,
 				9141F79A2D54B9F1006E7D37 /* DashboardScreen.swift */,
 				9141F79B2D54B9F1006E7D37 /* FavoriteScreen.swift */,
@@ -559,7 +553,6 @@
 			files = (
 				9141F7AD2D54B9F1006E7D37 /* AliyunProvider.swift in Sources */,
 				9141F7AE2D54B9F1006E7D37 /* RootReducer.swift in Sources */,
-				9141F7E22D565AC4006E7D37 /* SettingsReducer.swift in Sources */,
 				9141F7AF2D54B9F1006E7D37 /* StringResource+Ex.swift in Sources */,
 				9141F7B02D54B9F1006E7D37 /* Appearance+Ex.swift in Sources */,
 				9141F7B12D54B9F1006E7D37 /* Runtime+Ex.swift in Sources */,
@@ -585,7 +578,6 @@
 				9141F7C52D54B9F1006E7D37 /* Parameter+Ex.swift in Sources */,
 				9141F7C62D54B9F1006E7D37 /* DashboardReducer.swift in Sources */,
 				9141F7C72D54B9F1006E7D37 /* PersonalScreen.swift in Sources */,
-				9141F7E42D565ACF006E7D37 /* SettingsScreen.swift in Sources */,
 				9141F7C82D54B9F1006E7D37 /* PopupManager.swift in Sources */,
 				9141F7C92D54B9F1006E7D37 /* FavoriteScreen.swift in Sources */,
 				9141F7CA2D54B9F1006E7D37 /* Module+Ex.swift in Sources */,

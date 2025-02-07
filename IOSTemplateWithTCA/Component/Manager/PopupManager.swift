@@ -40,8 +40,7 @@ class PopupManager {
         let type = state?.type == nil ? self.type : state?.type
         if type == PopupType.share.rawValue {
             return param
-                .type(.floater(verticalPadding: 0, useSafeAreaInset: false))
-                .position(.bottom)
+                .appearFrom(.centerScale)
                 .closeOnTap(false)
                 .closeOnTapOutside(true)
                 .backgroundColor(.primary.opacity(0.4))

@@ -18,34 +18,35 @@ import HiNav
 import HiSwiftUI
 import Domain
 import NetworkPlatform
+import ExytePopupView
 import HiLog
 
 struct ShareScreen: View {
     
+    @Environment(\.popupDismiss) var dismiss
     @Perception.Bindable var store: StoreOf<ShareReducer>
 
     var body: some View {
         WithPerceptionTracking {
-//            ScrollView {
-//                VStack(spacing: 0) {
-//                    ForEach(store.list.models) { cell($0) }
-//                }
-//            }
-//            .background(Color.surface)
-//            .navigationTitle(R.string.localizable.about.localizedStringKey)
-//            .navigationBarTitleDisplayMode(.inline)
-//            .toolbar(.hidden, for: .tabBar)
-//            .onAppear {
-//                stats(.beginPageView(name: self.className))
-//                store.send(.load)
-//            }
-//            .onDisappear {
-//                stats(.endPageView(name: self.className))
-//            }
-            VStack {
-                
+            content()
+            .onAppear {
+                stats(.beginPageView(name: self.className))
+            }
+            .onDisappear {
+                stats(.endPageView(name: self.className))
             }
         }
+    }
+    
+    @ViewBuilder
+    func content() -> some View {
+        VStack {
+            
+        }
+        .toolbar(.hidden, for: .tabBar)
+        .frame(width: (screenWidth * 0.7).flat, height: (screenWidth * 0.8).flat)
+        .background(Color.orange)
+        .clipShape(.rect(cornerRadius: 16))
     }
     
 }

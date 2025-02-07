@@ -13,8 +13,13 @@
 "Blog" = "Blog";
 "About" = "About";
 "Exit" = "Exit";
+"Prompt" = "Prompt";
 // MARK: 词语
 "ClickToLogin" = "Click to Login";
+// MARK: 句子 - Toast
+"Toast.Login.Message" = "Congratulations, login successfully";
+// MARK: 句子 - Alert
+"Alert.Clear.Message" = "Clear the search history？";
 // MARK: 句子 - Sheet
 "Sheet.Logout.Message" = "Confirm logout？";
 // MARK: 句子 - Error

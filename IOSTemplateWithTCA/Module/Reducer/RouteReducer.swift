@@ -72,9 +72,6 @@ struct RouteReducer {
                 return .none
             case .sheet(.presented(.exit)):
                 log("退出了Sheet框")
-//                return .run { send in
-//                    await send(.target(HiNav.shared.backDeepLink(.dismiss)))
-//                }
                 return .none
             case .alert(.presented(.default)):
                 log("确认了Alert框")

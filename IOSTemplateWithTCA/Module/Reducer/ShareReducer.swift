@@ -21,24 +21,26 @@ struct ShareReducer {
     
     @ObservableState
     struct State: Equatable {
+        let url: String
+        let parameters: [String: String]
+        var route = RouteReducer.State.init()
         @Shared(.profile) var profile = .default
         init(url: String) {
+            self.parameters = url.url?.queryParameters ?? [:]
+            self.url = self.parameters.string(for: Parameter.url) ?? url
         }
     }
     
     enum Action: BindableAction {
         case binding(BindingAction<State>)
-        case load
+        case route(RouteReducer.Action)
     }
-    
-    private enum CancelID { case load }
     
     var body: some Reducer<State, Action> {
         BindingReducer()
-        Reduce { state, action in
+        Scope(state: \.route, action: \.route) { RouteReducer.init() }
+        Reduce { _, action in
             switch action {
-            case .load:
-                return .none
             default:
                 return .none
             }

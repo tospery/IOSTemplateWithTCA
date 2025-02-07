@@ -52,11 +52,75 @@ struct AboutScreen: View {
             AboutLogoCell { }
         } else {
             TileCell(model) {
-                if let target = model.target {
-                    store.send(.target(target))
+                if id == .toast {
+                    toast()
+                } else if id == .alert {
+                    alert()
+                } else if id == .sheet {
+                    sheet()
+                } else if id == .popup {
+                    popup()
+                } else if id == .logic {
+                    logic()
                 }
             }
         }
+    }
+    
+    func toast() {
+        store.send(.target(
+            HiNav.shared.toastMessageDeepLink(
+                R.string.localizable.toastLoginMessage.localizedString
+            )
+        ))
+    }
+    
+    func alert() {
+        store.send(.target(
+            HiNav.shared.alertDeepLink(
+                R.string.localizable.prompt.localizedString,
+                R.string.localizable.alertClearMessage.localizedString,
+                [
+                    ITAlertAction.default,
+                    ITAlertAction.cancel
+                ]
+            )
+        ))
+    }
+    
+    func sheet() {
+        store.send(.target(
+            HiNav.shared.sheetDeepLink(
+                R.string.localizable.prompt.localizedString,
+                R.string.localizable.sheetLogoutMessage.localizedString,
+                [
+                    ITAlertAction.exit,
+                    ITAlertAction.cancel
+                ]
+            )
+        ))
+    }
+    
+    func popup() {
+        store.send(.target(
+            HiNav.shared.popupDeepLink(
+                PopupType.share.rawValue,
+                [
+                    Parameter.data: "弹窗数据"
+                ].jsonString() ?? ""
+            )
+        ))
+    }
+    
+    func logic() {
+        store.send(.target(
+            HiNav.shared.logicDeepLink(
+                LogicType.contact.rawValue,
+                [
+                    Parameter.data: "业务数据"
+                ].jsonString() ?? ""
+            )
+        ))
     }
     
 }

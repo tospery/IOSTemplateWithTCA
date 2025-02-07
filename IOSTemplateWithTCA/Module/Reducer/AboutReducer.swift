@@ -49,7 +49,7 @@ struct AboutReducer {
                 state.list.isLoading = true
                 return .run { send in
                     await send(.list(.models(.success(
-                        [TileId.logo].map {
+                        TileId.aboutValues.map {
                             Tile.init(
                                 id: $0.id,
                                 title: $0.description,

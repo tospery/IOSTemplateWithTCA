@@ -82,7 +82,7 @@ struct _R {
       var english: RswiftResources.StringResource { .init(key: "English", tableName: "Constant", source: source, developmentValue: "English", comment: nil) }
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 38 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 41 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -92,6 +92,13 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var about: RswiftResources.StringResource { .init(key: "About", tableName: "Localizable", source: source, developmentValue: "About", comment: nil) }
+
+      /// en translation: Clear the search history？
+      ///
+      /// Key: Alert.Clear.Message
+      ///
+      /// Locales: en, zh-Hans
+      var alertClearMessage: RswiftResources.StringResource { .init(key: "Alert.Clear.Message", tableName: "Localizable", source: source, developmentValue: "Clear the search history？", comment: nil) }
 
       /// en translation: Blog
       ///
@@ -324,6 +331,13 @@ struct _R {
       /// Locales: en, zh-Hans
       var personal: RswiftResources.StringResource { .init(key: "Personal", tableName: "Localizable", source: source, developmentValue: "Personal", comment: nil) }
 
+      /// en translation: Prompt
+      ///
+      /// Key: Prompt
+      ///
+      /// Locales: en, zh-Hans
+      var prompt: RswiftResources.StringResource { .init(key: "Prompt", tableName: "Localizable", source: source, developmentValue: "Prompt", comment: nil) }
+
       /// en translation: Confirm logout？
       ///
       /// Key: Sheet.Logout.Message
@@ -337,6 +351,13 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var sure: RswiftResources.StringResource { .init(key: "Sure", tableName: "Localizable", source: source, developmentValue: "Sure", comment: nil) }
+
+      /// en translation: Congratulations, login successfully
+      ///
+      /// Key: Toast.Login.Message
+      ///
+      /// Locales: en, zh-Hans
+      var toastLoginMessage: RswiftResources.StringResource { .init(key: "Toast.Login.Message", tableName: "Localizable", source: source, developmentValue: "Congratulations, login successfully", comment: nil) }
 
       /// en translation: Unknown
       ///

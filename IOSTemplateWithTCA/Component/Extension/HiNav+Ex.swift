@@ -63,7 +63,6 @@ extension HiNav: @retroactive HiNavCompatible {
         }
     }
     
-    // swiftlint:disable function_body_length
     public func resolution(_ target: String) -> Any? {
         log("target: \(target)")
         if target.isValidWebUrl {
@@ -71,9 +70,7 @@ extension HiNav: @retroactive HiNavCompatible {
                 return nil
             }
             
-//            let isFile = target.url?.queryParameters?.bool(for: Parameter.isFile)
-            var params = target.url?.queryParameters ?? [:]
-//            params.removeValue(forKey: Parameter.isFile)
+            let params = target.url?.queryParameters ?? [:]
             var url = target.url?.deletingAllQueryParameters()
             if params.count != 0 {
                 url = url?.myAppendingQueryParameters(params)
@@ -89,6 +86,8 @@ extension HiNav: @retroactive HiNavCompatible {
             var paths = urlString.url?.pathComponents ?? []
             paths.removeAll("/")
             
+            // 此处，用于将Web URL转换为Native URL的处理
+            
             if native.isNotEmpty {
                 native = native.url?.myAppendingQueryParameters([Parameter.fromWeb: true.string]).absoluteString ?? ""
                 return self.handleDeepLink(native)
@@ -103,14 +102,11 @@ extension HiNav: @retroactive HiNavCompatible {
             return self.handleDeepLink(target)
         }
     }
-    // swiftlint:enable function_body_length
     
     // swiftlint:disable function_body_length
     func handleDeepLink(_ target: String) -> Any? {
         guard target.isValidDeepLink else { return nil }
         guard let url = target.url else { return nil }
-        log("内部URL: \(url)")
-        // let fromWeb = target.url?.queryParameters?.bool(for: Parameter.fromWeb) ?? false
         if target.isValidBackUrl {
             let type = url.queryParameters?.enum(for: Parameter.type, type: BackType.self) ?? .auto
             return BackState(type: type)
@@ -199,31 +195,8 @@ extension HiNav: @retroactive HiNavCompatible {
     // swiftlint:enable function_body_length
     
     func handleLogic(_ type: LogicType, _ data: String) -> Any? {
-#if ALIYUN_ENABLE
-        guard type == .contact else { return nil }
-        guard let topName = UIViewController.topMost?.className, topName.isNotEmpty else { return nil }
-        log("打开客服页面时，当前的topMost为：\(topName)")
-        guard topName != "BCFeedbackViewController" else { return nil }
-
-        let dict = data.dictionary
-        let username = dict.string(for: Parameter.username) ?? ""
-        
-        let feedback = OCHelper.sharedInstance().feedbackKit
-        feedback.extInfo = dict
-        feedback.setUserNick(username)
-        feedback.makeFeedbackViewController { viewController, error in
-            if let error = error?.asHiError {
-                guard let url = HiNav.shared.toastMessageDeepLink(error.localizedDescription).url else { return }
-                UIApplication.shared.open(url, options: [:])
-                return
-            }
-            viewController?.closeBlock = { parent in
-                parent?.dismiss(animated: true)
-            }
-            let nav = NavigationController.init(rootViewController: viewController!)
-            UIViewController.topMost?.present(nav, animated: true)
-        }
-#endif
+        log("业务类型：\(type)")
+        log("业务数据：\(data)")
         return nil
     }
 

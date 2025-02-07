@@ -13,8 +13,13 @@
 "Blog" = "博客";
 "About" = "关于";
 "Exit" = "退出";
+"Prompt" = "提示";
 // MARK: 词语
 "ClickToLogin" = "点击登录";
+// MARK: 句子 - Toast
+"Toast.Login.Message" = "恭喜您，登录成功！！！";
+// MARK: 句子 - Alert
+"Alert.Clear.Message" = "是否清除记录？";
 // MARK: 句子 - Sheet
 "Sheet.Logout.Message" = "确认退出？";
 // MARK: 句子 - Error

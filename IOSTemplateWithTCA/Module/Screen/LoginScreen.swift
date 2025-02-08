@@ -73,9 +73,3 @@ struct LoginScreen: View {
     }
     
 }
-
-#Preview {
-    LoginScreen(store: Store(initialState: LoginReducer.State.init(), reducer: {
-        LoginReducer()
-    }))
-}

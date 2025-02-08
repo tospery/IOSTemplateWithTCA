@@ -21,8 +21,19 @@ struct LoginReducer {
     @ObservableState
     struct State: Equatable {
         @Shared(.profile) var profile = .default
+        let url: String
+        let tabBar: TabBarItemType?
         var route = RouteReducer.State.init()
         var error: HiError?
+        init(url: String) {
+            self.url = url
+            let value = url.url?.queryParameters?.int(for: Parameter.tabBar)
+            if value != nil {
+                self.tabBar = TabBarItemType(rawValue: value!)
+            } else {
+                self.tabBar = nil
+            }
+        }
     }
     
     enum Action: BindableAction {
@@ -34,6 +45,7 @@ struct LoginReducer {
     
     @Dependency(\.dismiss) var dismiss
     @Dependency(\.continuousClock) var clock
+    @Dependency(\.application) var application
     
     private enum CancelID { case login, user }
     
@@ -53,8 +65,16 @@ struct LoginReducer {
                 var profile = state.profile
                 profile.user = user
                 state.profile = profile
-                return .run { _ in
+                return .run { [state] _ in
                     await dismiss()
+                    if let tabBar = state.tabBar {
+                        _ = await self.application.open(
+                            HiNav.shared.deepLink(host: .root, parameters: [
+                                Parameter.tabBar: tabBar.rawValue.string
+                            ]).url!,
+                            options: [:]
+                        )
+                    }
                 }.cancellable(id: CancelID.user)
             default:
                 return .none

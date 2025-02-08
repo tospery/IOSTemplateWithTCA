@@ -32,6 +32,7 @@ enum Push {
 
 extension HiNavHost {
     
+    static var root: HiNavHost { "root" }
     static var dashboard: HiNavHost { "dashboard" }
     static var favorite: HiNavHost { "favorite" }
     static var personal: HiNavHost { "personal" }
@@ -128,7 +129,7 @@ extension HiNav: @retroactive HiNavCompatible {
             if host == .about { return IOSTemplateWithTCA.Push.State.about(.init(url: target)) }
             if host == .web { return IOSTemplateWithTCA.Push.State.web(.init(url: target)) }
         case .present:
-            if host == .login { return LoginReducer.State.init() }
+            if host == .login { return LoginReducer.State.init(url: target) }
         case .open:
             if target.isValidToastUrl {
                 let message = url.queryParameters?.string(for: Parameter.message) ?? ""

@@ -11,6 +11,7 @@ import DependenciesAdditions
 import SFSafeSymbols
 import SwifterSwift
 import AlertToast_Hi
+import HiBase
 import HiCore
 import HiSwiftUI
 import HiLog
@@ -105,7 +106,7 @@ struct RootScreen: View {
                     .frame(width: screenWidth / 3.0, height: tabBarHeight - safeArea.bottom)
                     .contentShape(.rect)
                     .onTapGesture {
-                        store.send(.login)
+                        store.send(.login(.favorite))
                     }
             }
         }
@@ -114,6 +115,14 @@ struct RootScreen: View {
     func handleURL(_ url: URL) {
         log("root中的onOpenURL: \(url)")
         log("store.tabBarItemType: \(store.tabBarItemType)")
+        if url.host() == .root {
+            if let value = url.queryParameters?.int(for: Parameter.tabBar),
+               let tabBar = TabBarItemType(rawValue: value),
+               tabBar != store.tabBarItemType {
+                store.send(.tabBarItemType(tabBar))
+            }
+            return
+        }
         switch store.tabBarItemType {
         case .dashboard: store.send(.dashboard(.route(.target(url.absoluteString))))
         case .favorite: store.send(.favorite(.route(.target(url.absoluteString))))

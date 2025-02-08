@@ -10,6 +10,7 @@ import Combine
 import ComposableArchitecture
 import DependenciesAdditions
 import RealmSwift
+import HiBase
 import HiCore
 import HiNav
 import HiSwiftUI
@@ -40,7 +41,7 @@ struct RootReducer {
         case personal(PersonalReducer.Action)
         
         case load
-        case login
+        case login(TabBarItemType)
     }
     
     @Dependency(\.continuousClock) var clock
@@ -61,10 +62,12 @@ struct RootReducer {
                     // _ = await DatabaseManager.shared.exampleData().asResult()
                     await send(.databaseInitialized(await self.databaseInitialize()))
                 }.cancellable(id: CancelID.load)
-            case .login:
+            case let .login(tabBarItemType):
                 return .run { _ in
                     _ = await self.application.open(
-                        HiNav.shared.deepLink(host: .login).url!,
+                        HiNav.shared.deepLink(host: .login, parameters: [
+                            Parameter.tabBar: tabBarItemType.rawValue.string
+                        ]).url!,
                         options: [:]
                     )
                 }.cancellable(id: CancelID.login)

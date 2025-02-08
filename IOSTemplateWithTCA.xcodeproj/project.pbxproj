@@ -131,6 +131,7 @@
 		9141F7A82D54B9F1006E7D37 /* default-v0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "default-v0.swift"; sourceTree = "<group>"; };
 		9141F7DD2D54BC92006E7D37 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		9141F7DF2D54BDE3006E7D37 /* default-v0.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "default-v0.realm"; sourceTree = "<group>"; };
+		91B5B0F62D5707A800F6983D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B2521D9D9661463D3A733E04 /* Pods-IOSTemplateWithTCA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSTemplateWithTCA.debug.xcconfig"; path = "Target Support Files/Pods-IOSTemplateWithTCA/Pods-IOSTemplateWithTCA.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -217,6 +218,7 @@
 				9141F7662D54AD37006E7D37 /* Constant.strings */,
 				9141F76A2D54AE02006E7D37 /* Info.plist */,
 				9141F7DD2D54BC92006E7D37 /* Launch Screen.storyboard */,
+				91B5B0F62D5707A800F6983D /* README.md */,
 			);
 			name = App;
 			sourceTree = "<group>";

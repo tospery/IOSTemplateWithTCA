@@ -22,11 +22,10 @@ struct DashboardReducer {
     @ObservableState
     struct State: Equatable {
         var route = RouteReducer.State.init()
-        var list: ListReducer<Tile>.State
-        var tappedCount = 0
+        var list: ListReducer<Language>.State
         @Shared(.profile) var profile = .default
         init(url: String) {
-            var myList = ListReducer<Tile>.State.init(url: url)
+            var myList = ListReducer<Language>.State.init(url: url)
             myList.shouldRefresh = myList.parameters.bool(for: Parameter.shouldRefresh) ?? false
             myList.shouldLoadMore = myList.parameters.bool(for: Parameter.shouldLoadMore) ?? false
             self.list = myList
@@ -36,7 +35,7 @@ struct DashboardReducer {
     enum Action: BindableAction {
         case binding(BindingAction<State>)
         case route(RouteReducer.Action)
-        case list(ListReducer<Tile>.Action)
+        case list(ListReducer<Language>.Action)
         case load
     }
     
@@ -46,11 +45,12 @@ struct DashboardReducer {
         BindingReducer()
         Scope(state: \.route, action: \.route) { RouteReducer.init() }
         Scope(state: \.list, action: \.list) { ListReducer.init() }
-        Reduce { state, action in
+        Reduce { _, action in
             switch action {
             case .load:
-                state.list.isLoading = true
-                return .none
+                return .run { send in
+                    await send(.list(.load))
+                }
             default:
                 return .none
             }

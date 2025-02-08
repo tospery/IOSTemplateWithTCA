@@ -13,7 +13,7 @@ import HiCore
 import Domain
 
 enum TrendingAPI {
-    case repos
+    case languages
 }
 
 extension TrendingAPI: TargetType {
@@ -22,7 +22,7 @@ extension TrendingAPI: TargetType {
 
     var path: String {
         switch self {
-        case .repos: return "/repositories"
+        case .languages: return "/languages"
         }
     }
 
@@ -34,8 +34,7 @@ extension TrendingAPI: TargetType {
         var parameters = NetworkPlatform.environment
         let encoding: ParameterEncoding = URLEncoding.default
         switch self {
-        case .repos:
-            parameters[Parameter.since] = "weekly"
+        case .languages: break
         }
         return .requestParameters(parameters: parameters, encoding: encoding)
     }

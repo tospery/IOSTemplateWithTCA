@@ -88,16 +88,16 @@ struct ListReducer<Model: ModelType> {
     
     func load(_ state: inout State, _ action: Action) -> Effect<Action> {
         state.isLoading = true
-        if state.host == .favorite {
-            return self.requestFavorite(&state, action, .load)
+        if state.host == .dashboard {
+            return self.requestLanguage(&state, action, .load)
         }
         return .none
     }
     
     func refresh(_ state: inout State, _ action: Action) -> Effect<Action> {
         state.isRefreshing = true
-        if state.host == .favorite {
-            return self.requestFavorite(&state, action, .refresh)
+        if state.host == .dashboard {
+            return self.requestLanguage(&state, action, .refresh)
         }
         return .none
     }
@@ -107,8 +107,8 @@ struct ListReducer<Model: ModelType> {
             return .none
         }
         state.isLoadingMore = true
-        if state.host == .favorite {
-            return self.requestFavorite(&state, action, .loadMore)
+        if state.host == .dashboard {
+            return self.requestLanguage(&state, action, .loadMore)
         }
         return .none
     }
@@ -132,6 +132,14 @@ struct ListReducer<Model: ModelType> {
             }
         } else {
             if !state.isLoadingMore && !models.isEmpty {
+                if state.host == .dashboard {
+                    log("开始保存到数据库---事件")
+                    return .run { _ in
+                        _ = await self.platformClient.database().languageService()
+                            .save(languages: unsafeBitCast(models, to: [Language].self))
+                            .asResult()
+                    }
+                }
             }
         }
         return .none
@@ -145,13 +153,29 @@ struct ListReducer<Model: ModelType> {
         return .none
     }
     
-    func requestFavorite(_ state: inout State, _ action: Action, _ mode: HiRequestMode) -> Effect<Action> {
+    func requestLanguage(_ state: inout State, _ action: Action, _ mode: HiRequestMode) -> Effect<Action> {
         let pageIndex = mode == .loadMore ? state.pageIndex : state.pageStart
         return .run { send in
             if mode == .load {
                 await send(.binding(.set(\.fromDatabase, true)))
+                await send(.models(
+                    unsafeBitCast(
+                        await self.platformClient.database().languageService()
+                            .languages()
+                            .asResult(),
+                        to: Result<[Model], Error>.self
+                    )
+                ))
                 await send(.binding(.set(\.fromDatabase, false)))
             }
+            await send(.models(
+                unsafeBitCast(
+                    await self.platformClient.network().languageService()
+                        .languages()
+                        .asResult(),
+                    to: Result<[Model], Error>.self
+                )
+            ))
             if mode == .refresh {
                 await send(.binding(.set(\.isRefreshing, false)))
             } else if mode == .loadMore {

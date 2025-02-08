@@ -40,7 +40,7 @@
 		9141F7C12D54B9F1006E7D37 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9141F77E2D54B9F1006E7D37 /* Constant.swift */; };
 		9141F7C22D54B9F1006E7D37 /* AboutScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9141F7992D54B9F1006E7D37 /* AboutScreen.swift */; };
 		9141F7C32D54B9F1006E7D37 /* HiNav+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9141F7702D54B9F1006E7D37 /* HiNav+Ex.swift */; };
-		9141F7C42D54B9F1006E7D37 /* RepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9141F78C2D54B9F1006E7D37 /* RepoCell.swift */; };
+		9141F7C42D54B9F1006E7D37 /* LanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9141F78C2D54B9F1006E7D37 /* LanguageCell.swift */; };
 		9141F7C52D54B9F1006E7D37 /* Parameter+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9141F7752D54B9F1006E7D37 /* Parameter+Ex.swift */; };
 		9141F7C62D54B9F1006E7D37 /* DashboardReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9141F78F2D54B9F1006E7D37 /* DashboardReducer.swift */; };
 		9141F7C72D54B9F1006E7D37 /* PersonalScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9141F79D2D54B9F1006E7D37 /* PersonalScreen.swift */; };
@@ -107,7 +107,7 @@
 		9141F7862D54B9F1006E7D37 /* OCHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCHelper.m; sourceTree = "<group>"; };
 		9141F7882D54B9F1006E7D37 /* AliyunProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AliyunProvider.swift; sourceTree = "<group>"; };
 		9141F78B2D54B9F1006E7D37 /* AboutLogoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutLogoCell.swift; sourceTree = "<group>"; };
-		9141F78C2D54B9F1006E7D37 /* RepoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCell.swift; sourceTree = "<group>"; };
+		9141F78C2D54B9F1006E7D37 /* LanguageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCell.swift; sourceTree = "<group>"; };
 		9141F78E2D54B9F1006E7D37 /* AboutReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutReducer.swift; sourceTree = "<group>"; };
 		9141F78F2D54B9F1006E7D37 /* DashboardReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardReducer.swift; sourceTree = "<group>"; };
 		9141F7902D54B9F1006E7D37 /* FavoriteReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteReducer.swift; sourceTree = "<group>"; };
@@ -303,7 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				9141F78B2D54B9F1006E7D37 /* AboutLogoCell.swift */,
-				9141F78C2D54B9F1006E7D37 /* RepoCell.swift */,
+				9141F78C2D54B9F1006E7D37 /* LanguageCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -574,7 +574,7 @@
 				9141F7C12D54B9F1006E7D37 /* Constant.swift in Sources */,
 				9141F7C22D54B9F1006E7D37 /* AboutScreen.swift in Sources */,
 				9141F7C32D54B9F1006E7D37 /* HiNav+Ex.swift in Sources */,
-				9141F7C42D54B9F1006E7D37 /* RepoCell.swift in Sources */,
+				9141F7C42D54B9F1006E7D37 /* LanguageCell.swift in Sources */,
 				9141F7C52D54B9F1006E7D37 /* Parameter+Ex.swift in Sources */,
 				9141F7C62D54B9F1006E7D37 /* DashboardReducer.swift in Sources */,
 				9141F7C72D54B9F1006E7D37 /* PersonalScreen.swift in Sources */,

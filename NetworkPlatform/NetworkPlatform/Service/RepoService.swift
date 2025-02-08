@@ -20,12 +20,7 @@ final class RepoService: Domain.RepoService {
     }
 
     func repos() -> AnyPublisher<[Domain.Repo], any Error> {
-        multiNetworking.requestArray(
-            MultiTarget.init(
-                TrendingAPI.repos
-            ),
-            type: Repo.self
-        )
+        fatalError()
     }
     
     func save(repos: [Domain.Repo]) -> AnyPublisher<Void, any Error> {

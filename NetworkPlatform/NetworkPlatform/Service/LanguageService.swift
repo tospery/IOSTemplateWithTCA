@@ -20,13 +20,12 @@ final class LanguageService: Domain.LanguageService {
     }
     
     func languages() -> AnyPublisher<[Domain.Language], any Error> {
-//        multiNetworking.requestArray(
-//            MultiTarget.init(
-//                TrendingAPI.languages
-//            ),
-//            type: Language.self
-//        )
-        fatalError()
+        multiNetworking.requestArray(
+            MultiTarget.init(
+                TrendingAPI.languages
+            ),
+            type: Language.self
+        )
     }
     
     func save(languages: [Domain.Language]) -> AnyPublisher<Void, any Error> {

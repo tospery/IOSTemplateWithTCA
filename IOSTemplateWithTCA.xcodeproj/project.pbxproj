@@ -41,7 +41,6 @@
 		9141F7C22D54B9F1006E7D37 /* AboutScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9141F7992D54B9F1006E7D37 /* AboutScreen.swift */; };
 		9141F7C32D54B9F1006E7D37 /* HiNav+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9141F7702D54B9F1006E7D37 /* HiNav+Ex.swift */; };
 		9141F7C42D54B9F1006E7D37 /* LanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9141F78C2D54B9F1006E7D37 /* LanguageCell.swift */; };
-		9141F7C52D54B9F1006E7D37 /* Parameter+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9141F7752D54B9F1006E7D37 /* Parameter+Ex.swift */; };
 		9141F7C62D54B9F1006E7D37 /* DashboardReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9141F78F2D54B9F1006E7D37 /* DashboardReducer.swift */; };
 		9141F7C72D54B9F1006E7D37 /* PersonalScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9141F79D2D54B9F1006E7D37 /* PersonalScreen.swift */; };
 		9141F7C82D54B9F1006E7D37 /* PopupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9141F7832D54B9F1006E7D37 /* PopupManager.swift */; };
@@ -90,7 +89,6 @@
 		9141F7722D54B9F1006E7D37 /* Library+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Library+Ex.swift"; sourceTree = "<group>"; };
 		9141F7732D54B9F1006E7D37 /* Localization+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Localization+Ex.swift"; sourceTree = "<group>"; };
 		9141F7742D54B9F1006E7D37 /* Module+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Module+Ex.swift"; sourceTree = "<group>"; };
-		9141F7752D54B9F1006E7D37 /* Parameter+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Parameter+Ex.swift"; sourceTree = "<group>"; };
 		9141F7762D54B9F1006E7D37 /* PersistenceReaderKey+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersistenceReaderKey+Ex.swift"; sourceTree = "<group>"; };
 		9141F7772D54B9F1006E7D37 /* Profile+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+Ex.swift"; sourceTree = "<group>"; };
 		9141F7782D54B9F1006E7D37 /* Runtime+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Runtime+Ex.swift"; sourceTree = "<group>"; };
@@ -240,7 +238,6 @@
 				9141F7722D54B9F1006E7D37 /* Library+Ex.swift */,
 				9141F7732D54B9F1006E7D37 /* Localization+Ex.swift */,
 				9141F7742D54B9F1006E7D37 /* Module+Ex.swift */,
-				9141F7752D54B9F1006E7D37 /* Parameter+Ex.swift */,
 				9141F7762D54B9F1006E7D37 /* PersistenceReaderKey+Ex.swift */,
 				9141F7772D54B9F1006E7D37 /* Profile+Ex.swift */,
 				9141F7782D54B9F1006E7D37 /* Runtime+Ex.swift */,
@@ -577,7 +574,6 @@
 				9141F7C22D54B9F1006E7D37 /* AboutScreen.swift in Sources */,
 				9141F7C32D54B9F1006E7D37 /* HiNav+Ex.swift in Sources */,
 				9141F7C42D54B9F1006E7D37 /* LanguageCell.swift in Sources */,
-				9141F7C52D54B9F1006E7D37 /* Parameter+Ex.swift in Sources */,
 				9141F7C62D54B9F1006E7D37 /* DashboardReducer.swift in Sources */,
 				9141F7C72D54B9F1006E7D37 /* PersonalScreen.swift in Sources */,
 				9141F7C82D54B9F1006E7D37 /* PopupManager.swift in Sources */,

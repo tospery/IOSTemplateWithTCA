@@ -10,8 +10,7 @@ import Combine
 
 public protocol RepoService {
 
-    func repos() -> AnyPublisher<[Repo], Error>
-    func save(repos: [Repo]) -> AnyPublisher<Void, Error>
+    func search(keyword: String, pageIndex: Int, pageSize: Int) -> AnyPublisher<[Domain.Repo], any Error>
 
 }
 

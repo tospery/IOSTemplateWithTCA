@@ -19,12 +19,13 @@ final class RepoService: Domain.RepoService {
         self.environment = environment
     }
 
-    func repos() -> AnyPublisher<[Domain.Repo], any Error> {
-        fatalError()
-    }
-    
-    func save(repos: [Domain.Repo]) -> AnyPublisher<Void, any Error> {
-        fatalError()
+    func search(keyword: String, pageIndex: Int, pageSize: Int) -> AnyPublisher<[Domain.Repo], any Error> {
+        multiNetworking.requestList(
+            MultiTarget.init(
+                GithubAPI.search(keyword: keyword, pageIndex: pageIndex, pageSize: pageSize)
+            ),
+            type: Repo.self
+        ).map { $0.items }.eraseToAnyPublisher()
     }
 
 }

@@ -18,12 +18,8 @@ final class RepoService<Repository>: Domain.RepoService where Repository: Abstra
         self.repository = repository
     }
     
-    func repos() -> AnyPublisher<[Domain.Repo], any Error> {
-        repository.query(with: nil, sortDescriptors: [])
-    }
-
-    func save(repos: [Domain.Repo]) -> AnyPublisher<Void, any Error> {
-        repository.save(entities: repos)
+    func search(keyword: String, pageIndex: Int, pageSize: Int) -> AnyPublisher<[Domain.Repo], any Error> {
+        fatalError()
     }
     
 }

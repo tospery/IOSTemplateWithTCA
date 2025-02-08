@@ -18,5 +18,6 @@ public extension Parameter {
     static var appChannel: String { "app_channel" }
     static var pageIndex: String { "page" }
     static var pageSize: String { "per_page" }
-    static var since: String { "since" }
+    static var searchKey: String { "q" }
+    static var tabBar: String { "tabBar" }
 }

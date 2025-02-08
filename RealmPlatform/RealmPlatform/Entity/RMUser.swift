@@ -18,7 +18,11 @@ class RMUser: Object, Mappable {
     @Persisted var username: String?
     @Persisted var nickname: String?
     @Persisted var avatar: String?
-    @Persisted var href: String?
+    @Persisted var url: String?
+    @Persisted var type: String?
+    @Persisted var nodeId: String?
+    @Persisted var htmlUrl: String?
+    @Persisted var pageType: RMPageType?
     
     override init() {
         super.init()
@@ -32,15 +36,23 @@ class RMUser: Object, Mappable {
     func mapping(map: ObjectMapper.Map) {
         performMapping {
             id              >>> map["id"]
-            username        <- (map["username"], StringTransform.shared)
-            nickname        <- (map["nickname"], StringTransform.shared)
-            avatar          <- (map["avatar"], StringTransform.shared)
-            href            <- (map["href"], StringTransform.shared)
+            username        <- (map["login"], StringTransform.shared)
+            nickname        <- (map["name"], StringTransform.shared)
+            avatar          <- (map["avatar_url"], StringTransform.shared)
+            url             <- (map["url"], StringTransform.shared)
+            type            <- (map["type"], StringTransform.shared)
+            nodeId          <- (map["node_id"], StringTransform.shared)
+            htmlUrl         <- (map["html_url"], StringTransform.shared)
+            pageType        <- (map["pageType"], EnumTypeCastTransform<RMPageType>())
         }
     }
     
     override class func propertiesMapping() -> [String: String] {
-        [:]
+        [
+            "avatar": "avatar_url",
+            "nodeId": "node_id",
+            "htmlUrl": "html_url"
+        ]
     }
 }
 

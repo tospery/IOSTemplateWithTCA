@@ -13,16 +13,18 @@ public struct Repo: ModelType {
     
     public var id = ""
     public var name: String?
-    public var owner: String?
-    public var avatar: String?
+    public var fullName: String?
     public var url: String?
+    public var nodeId: String?
+    public var htmlUrl: String?
     public var language: String?
-    public var languageColor: String?
     public var des: String?
-    public var stars: Int?
-    public var forks: Int?
-    public var currentPeriodStars: Int?
-    public var builtBy = [User].init()
+    public var `private`: Bool?
+    public var fork: Bool?
+    public var stargazersCount: Int?
+    public var watchersCount: Int?
+    public var forksCount: Int?
+    public var owner: User?
     // 扩展字段
     public var pageType: PageType?
     
@@ -33,16 +35,18 @@ public struct Repo: ModelType {
     public mutating func mapping(map: ObjectMapper.Map) {
         id                  <- (map["id"], StringTransform.shared)
         name                <- (map["name"], StringTransform.shared)
-        owner               <- (map["owner"], StringTransform.shared)
-        avatar              <- (map["avatar"], StringTransform.shared)
+        fullName            <- (map["full_name"], StringTransform.shared)
         url                 <- (map["url"], StringTransform.shared)
+        nodeId              <- (map["node_id"], StringTransform.shared)
+        htmlUrl             <- (map["html_url"], StringTransform.shared)
         language            <- (map["language"], StringTransform.shared)
-        languageColor       <- (map["languageColor"], StringTransform.shared)
         des                 <- (map["description"], StringTransform.shared)
-        stars               <- (map["stars"], IntTransform.shared)
-        forks               <- (map["forks"], IntTransform.shared)
-        currentPeriodStars  <- (map["currentPeriodStars"], IntTransform.shared)
-        builtBy             <- map["builtBy"]
+        `private`           <- (map["private"], BoolTransform.shared)
+        fork                <- (map["fork"], BoolTransform.shared)
+        stargazersCount     <- (map["stargazers_count"], IntTransform.shared)
+        watchersCount       <- (map["watchers_count"], IntTransform.shared)
+        forksCount          <- (map["forks_count"], IntTransform.shared)
+        owner               <- map["owner"]
         pageType            <- (map["pageType"], EnumTypeCastTransform<PageType>())
         if id.isEmpty {
             id = name ?? UUID().uuidString
@@ -52,16 +56,8 @@ public struct Repo: ModelType {
     public static func == (lhs: Self, rhs: Self) -> Bool {
         lhs.id == rhs.id &&
         lhs.name == rhs.name &&
-        lhs.owner == rhs.owner &&
-        lhs.avatar == rhs.avatar &&
-        lhs.url == rhs.url &&
-        lhs.language == rhs.language &&
-        lhs.languageColor == rhs.languageColor &&
-        lhs.des == rhs.des &&
-        lhs.stars == rhs.stars &&
-        lhs.forks == rhs.forks &&
-        lhs.currentPeriodStars == rhs.currentPeriodStars &&
-        lhs.builtBy == rhs.builtBy
+        lhs.fullName == rhs.fullName &&
+        lhs.url == rhs.url
     }
     
 }

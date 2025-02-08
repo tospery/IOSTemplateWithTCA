@@ -16,6 +16,10 @@
 "Prompt" = "提示";
 // MARK: 词语
 "ClickToLogin" = "点击登录";
+// MARK: 句子 - Refresh
+"Header.Idle.Text" = "下拉可以刷新";
+"Header.Pulling.Text" = "松开立即刷新";
+"Footer.NoMoreData.Text" = "已经全部加载完毕";
 // MARK: 句子 - Toast
 "Toast.Login.Message" = "恭喜您，登录成功！！！";
 // MARK: 句子 - Alert

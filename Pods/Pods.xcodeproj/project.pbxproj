@@ -1167,7 +1167,6 @@
 		ED3E5CDF0226F923C04357E1F4A5EF90 /* DynamicTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA9F6CBC47A9E197F561EA55E09967D /* DynamicTarget.swift */; };
 		ED60A5DC1FBA322B8829D17DACF25FC5 /* ColorResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65587A710F6208A0C319D9ABDBEF85B /* ColorResource.swift */; };
 		ED6175B2CC431B08284E1F1C8881FAAC /* RLMThreadSafeReference.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C85FB3554CBEDC4AA4491A28BCD7D22 /* RLMThreadSafeReference.h */; };
-		ED8BEAF609EDEA099777FC7F603517F4 /* TrendingAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40553F1976AFE355A5C434D51B354C34 /* TrendingAPI.swift */; };
 		EDD1F4A31BC9F0816F25B14E0B4B89B5 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D992B02EF62E5A7F51D806FD16C77E /* NetworkReachabilityManager.swift */; };
 		EE250B6BF1F58CEE89780D2566626A57 /* RLMGeospatial.h in Copy . Public Headers */ = {isa = PBXBuildFile; fileRef = D91F619E357FCEE3D66DAB6A9AEB83E9 /* RLMGeospatial.h */; };
 		EE2A4310EE02A8BA9A745270958423E7 /* HiLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87197AA23FDE37FB38B76C95DF849BE /* HiLoggerPlugin.swift */; };
@@ -2261,7 +2260,6 @@
 		3FAF113FBF3F537C3E10419C6B48F5FF /* FileDestination.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FileDestination.swift; path = Sources/FileDestination.swift; sourceTree = "<group>"; };
 		401E5B5D7D32489DD848AF7E866E9FE0 /* PresentationContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PresentationContext.swift; path = Sources/SwiftUIKit/Presentation/PresentationContext.swift; sourceTree = "<group>"; };
 		402D4C5D591A1FB8CC8376C398869AA7 /* UIDevice+Core.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIDevice+Core.swift"; path = "HiCore/Extension/UIDevice+Core.swift"; sourceTree = "<group>"; };
-		40553F1976AFE355A5C434D51B354C34 /* TrendingAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TrendingAPI.swift; sourceTree = "<group>"; };
 		408283AFB261FFC58E44856447038B00 /* UITextView+Utils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITextView+Utils.h"; path = "HiCore/ObjC/UITextView+Utils.h"; sourceTree = "<group>"; };
 		40922933418166AB8DA63A7CAE329106 /* RepoService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RepoService.swift; sourceTree = "<group>"; };
 		409A9F2EB05AD8808B8C073EE2C7E8D6 /* HiLog-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HiLog-dummy.m"; sourceTree = "<group>"; };
@@ -4937,7 +4935,6 @@
 				246EE40124B143D569FC6AAF17D8F517 /* DynamicAPI.swift */,
 				89BF122EC0C06F5D78D79FDB1CF06787 /* DynamicNetworking.swift */,
 				BE7911A8B1479750A78EC64FADEAFD81 /* MultiNetworking.swift */,
-				40553F1976AFE355A5C434D51B354C34 /* TrendingAPI.swift */,
 			);
 			name = Network;
 			path = NetworkPlatform/Network;
@@ -8705,7 +8702,6 @@
 				FBF4125784F9A689D73BA71E0F4BCF8A /* ProfileService.swift in Sources */,
 				C0840097C4D399838C25D352E06CC558 /* RepoService.swift in Sources */,
 				4BD632B52AC3BE4E7DBCACEDC716C348 /* ServiceProvider.swift in Sources */,
-				ED8BEAF609EDEA099777FC7F603517F4 /* TrendingAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

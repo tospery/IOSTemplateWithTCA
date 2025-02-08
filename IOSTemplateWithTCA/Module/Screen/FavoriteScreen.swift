@@ -44,8 +44,11 @@ struct FavoriteScreen: View {
     func content() -> some View {
         VStack {
             Spacer()
-            Text("登录后、才能查看的Tab页")
+            Text("登录后、才能查看的Tab页（点击退出登录）")
                 .frame(maxWidth: .infinity)
+                .onTapGesture {
+                    store.send(.logout)
+                }
             Spacer()
         }
         .background(Color.surface)

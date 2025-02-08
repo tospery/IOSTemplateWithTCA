@@ -114,7 +114,6 @@ struct RootScreen: View {
     
     func handleURL(_ url: URL) {
         log("root中的onOpenURL: \(url)")
-        log("store.tabBarItemType: \(store.tabBarItemType)")
         if url.host() == .root {
             if let value = url.queryParameters?.int(for: Parameter.tabBar),
                let tabBar = TabBarItemType(rawValue: value),

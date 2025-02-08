@@ -82,7 +82,7 @@ struct _R {
       var english: RswiftResources.StringResource { .init(key: "English", tableName: "Constant", source: source, developmentValue: "English", comment: nil) }
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 41 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 44 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -295,6 +295,27 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var favorite: RswiftResources.StringResource { .init(key: "Favorite", tableName: "Localizable", source: source, developmentValue: "Favorite", comment: nil) }
+
+      /// en translation: No more data
+      ///
+      /// Key: Footer.NoMoreData.Text
+      ///
+      /// Locales: en, zh-Hans
+      var footerNoMoreDataText: RswiftResources.StringResource { .init(key: "Footer.NoMoreData.Text", tableName: "Localizable", source: source, developmentValue: "No more data", comment: nil) }
+
+      /// en translation: Pull down to refresh
+      ///
+      /// Key: Header.Idle.Text
+      ///
+      /// Locales: en, zh-Hans
+      var headerIdleText: RswiftResources.StringResource { .init(key: "Header.Idle.Text", tableName: "Localizable", source: source, developmentValue: "Pull down to refresh", comment: nil) }
+
+      /// en translation: Release to refresh
+      ///
+      /// Key: Header.Pulling.Text
+      ///
+      /// Locales: en, zh-Hans
+      var headerPullingText: RswiftResources.StringResource { .init(key: "Header.Pulling.Text", tableName: "Localizable", source: source, developmentValue: "Release to refresh", comment: nil) }
 
       /// en translation: Loading
       ///

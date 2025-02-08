@@ -22,6 +22,7 @@ extension UIApplication {
     var baseGithubUrl: String { "https://github.com" }
     
     @objc var myPageStart: Int { 1 }
+    @objc var myPageSize: Int { 10 }
     
     static var currentWindow: UIWindow? {
         return UIApplication.shared.connectedScenes

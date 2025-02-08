@@ -42,21 +42,52 @@ struct DashboardScreen: View {
         }
     }
     
+    // swiftlint:disable function_body_length
     @ViewBuilder
     func content() -> some View {
         ScrollView {
-            let last = store.list.models.last
             LazyVStack(spacing: 0) {
-                ForEach(store.list.models) { cell($0, last) }
+                if store.list.models.count > 0 {
+                    RefreshHeader(refreshing: $store.list.isRefreshing) {
+                        store.send(.list(.refresh))
+                    } label: { progress in
+                        if store.list.isRefreshing {
+                            SimpleHeaderRefreshingView()
+                        } else {
+                            SimpleHeaderIdleView(progress)
+                        }
+                    }
+                }
+                let last = store.list.models.last
+                ForEach(store.list.models) { model in
+                    RepoCell(model) { store.send(.route(.target($0))) }
+                    if model != last {
+                        Separator()
+                            .padding(.leading)
+                    }
+                }
+                if store.list.models.count > 0 {
+                    RefreshFooter(refreshing: $store.list.isLoadingMore) {
+                        store.send(.list(.loadMore))
+                    } label: {
+                        if store.list.noMoreData {
+                            SimpleFooterNoMoreDataView()
+                        } else {
+                            SimpleFooterLoadingView()
+                        }
+                    }
+                    .noMore(store.list.noMoreData)
+                    .preload(offset: 50)
+                }
             }
         }
-        .navigationTitle(R.string.localizable.dashboard.localizedStringKey)
+        .enableRefresh()
+        .navigationTitle(R.string.localizable.dashboard.localizedString)
         .navigationBarTitleDisplayMode(.inline)
         .overlay { loadOverlay() }
         .onAppear {
             stats(.beginPageView(name: self.className))
             if hasLoaded {
-                store.send(.list(.refresh))
                 return
             }
             hasLoaded = true
@@ -66,17 +97,7 @@ struct DashboardScreen: View {
             stats(.endPageView(name: self.className))
         }
     }
-    
-    @ViewBuilder
-    func cell(_ model: Language, _ last: Language?) -> some View {
-        VStack(spacing: 0) {
-            LanguageCell(model) {}
-            if model != last {
-                Separator()
-                    .padding(.leading)
-            }
-        }
-    }
+    // swiftlint:enable function_body_length
     
     @ViewBuilder
     func loadOverlay() -> some View {

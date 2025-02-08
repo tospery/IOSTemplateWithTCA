@@ -16,6 +16,10 @@
 "Prompt" = "Prompt";
 // MARK: 词语
 "ClickToLogin" = "Click to Login";
+// MARK: 句子 - Refresh
+"Header.Idle.Text" = "Pull down to refresh";
+"Header.Pulling.Text" = "Release to refresh";
+"Footer.NoMoreData.Text" = "No more data";
 // MARK: 句子 - Toast
 "Toast.Login.Message" = "Congratulations, login successfully";
 // MARK: 句子 - Alert

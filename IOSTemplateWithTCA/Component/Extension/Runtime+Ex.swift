@@ -17,6 +17,9 @@ extension Runtime: @retroactive RuntimeCompatible {
         ExchangeImplementations(UIApplication.self,
                                 #selector(getter: UIApplication.pageStart),
                                 #selector(getter: UIApplication.myPageStart))
+        ExchangeImplementations(UIApplication.self,
+                                #selector(getter: UIApplication.pageSize),
+                                #selector(getter: UIApplication.myPageSize))
     }
     
 }

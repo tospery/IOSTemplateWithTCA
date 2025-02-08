@@ -37,6 +37,15 @@ extension BaseResponse: @retroactive ResponseCompatible {
     }
     
     public func code(_ target: TargetType) -> Int {
+        guard let multi = target as? MultiTarget else { return self.code }
+        if let api = multi.target as? GithubAPI {
+            switch api {
+            case .search:
+                return ErrorCode.ok
+            default:
+                return self.code
+            }
+        }
         return self.code
     }
     
@@ -45,6 +54,15 @@ extension BaseResponse: @retroactive ResponseCompatible {
     }
     
     public func data(_ target: TargetType) -> Any? {
+        guard let multi = target as? MultiTarget else { return self.data }
+        if let api = multi.target as? GithubAPI {
+            switch api {
+            case .search:
+                return self.json
+            default:
+                return self.data
+            }
+        }
         return self.data
     }
 

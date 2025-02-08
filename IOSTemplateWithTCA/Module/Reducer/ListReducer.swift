@@ -89,7 +89,7 @@ struct ListReducer<Model: ModelType> {
     func load(_ state: inout State, _ action: Action) -> Effect<Action> {
         state.isLoading = true
         if state.host == .dashboard {
-            return self.requestLanguage(&state, action, .load)
+            return self.requestRepos(&state, action, .load)
         }
         return .none
     }
@@ -97,7 +97,7 @@ struct ListReducer<Model: ModelType> {
     func refresh(_ state: inout State, _ action: Action) -> Effect<Action> {
         state.isRefreshing = true
         if state.host == .dashboard {
-            return self.requestLanguage(&state, action, .refresh)
+            return self.requestRepos(&state, action, .refresh)
         }
         return .none
     }
@@ -108,7 +108,7 @@ struct ListReducer<Model: ModelType> {
         }
         state.isLoadingMore = true
         if state.host == .dashboard {
-            return self.requestLanguage(&state, action, .loadMore)
+            return self.requestRepos(&state, action, .loadMore)
         }
         return .none
     }
@@ -132,14 +132,7 @@ struct ListReducer<Model: ModelType> {
             }
         } else {
             if !state.isLoadingMore && !models.isEmpty {
-                if state.host == .dashboard {
-                    log("开始保存到数据库---事件")
-                    return .run { _ in
-                        _ = await self.platformClient.database().languageService()
-                            .save(languages: unsafeBitCast(models, to: [Language].self))
-                            .asResult()
-                    }
-                }
+                // 需要保存到数据库的数据在此处理
             }
         }
         return .none
@@ -153,25 +146,14 @@ struct ListReducer<Model: ModelType> {
         return .none
     }
     
-    func requestLanguage(_ state: inout State, _ action: Action, _ mode: HiRequestMode) -> Effect<Action> {
+    func requestRepos(_ state: inout State, _ action: Action, _ mode: HiRequestMode) -> Effect<Action> {
         let pageIndex = mode == .loadMore ? state.pageIndex : state.pageStart
+        let pageSize = state.pageSize
         return .run { send in
-            if mode == .load {
-                await send(.binding(.set(\.fromDatabase, true)))
-                await send(.models(
-                    unsafeBitCast(
-                        await self.platformClient.database().languageService()
-                            .languages()
-                            .asResult(),
-                        to: Result<[Model], Error>.self
-                    )
-                ))
-                await send(.binding(.set(\.fromDatabase, false)))
-            }
             await send(.models(
                 unsafeBitCast(
-                    await self.platformClient.network().languageService()
-                        .languages()
+                    await self.platformClient.network().repoService()
+                        .search(keyword: "swift", pageIndex: pageIndex, pageSize: pageSize)
                         .asResult(),
                     to: Result<[Model], Error>.self
                 )

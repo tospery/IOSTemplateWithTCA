@@ -22,12 +22,15 @@ struct DashboardReducer {
     @ObservableState
     struct State: Equatable {
         var route = RouteReducer.State.init()
-        var list: ListReducer<Language>.State
+        var list: ListReducer<Repo>.State
         @Shared(.profile) var profile = .default
         init(url: String) {
-            var myList = ListReducer<Language>.State.init(url: url)
-            myList.shouldRefresh = myList.parameters.bool(for: Parameter.shouldRefresh) ?? false
-            myList.shouldLoadMore = myList.parameters.bool(for: Parameter.shouldLoadMore) ?? false
+            let myURL = url.url?.myAppendingQueryParameters([
+                Parameter.page: PageType.dashboard.rawValue
+            ])
+            var myList = ListReducer<Repo>.State.init(url: myURL!.absoluteString)
+            myList.shouldRefresh = myList.parameters.bool(for: Parameter.shouldRefresh) ?? true
+            myList.shouldLoadMore = myList.parameters.bool(for: Parameter.shouldLoadMore) ?? true
             self.list = myList
         }
     }
@@ -35,7 +38,7 @@ struct DashboardReducer {
     enum Action: BindableAction {
         case binding(BindingAction<State>)
         case route(RouteReducer.Action)
-        case list(ListReducer<Language>.Action)
+        case list(ListReducer<Repo>.Action)
         case load
     }
     

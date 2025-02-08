@@ -72,9 +72,6 @@ struct RouteReducer {
                 return .none
             case .sheet(.presented(.exit)):
                 log("退出了Sheet框")
-                var profile = state.profile
-                profile.user = nil
-                state.profile = profile
                 return .none
             case .alert(.presented(.default)):
                 log("确认了Alert框")

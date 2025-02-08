@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		09C264E6CF7CBF55A6F3D980 /* Pods_IOSTemplateWithTCA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00CB69640C73899D18586129 /* Pods_IOSTemplateWithTCA.framework */; };
+		91188FCB2D573EE500F813ED /* default-v0.realm in Resources */ = {isa = PBXBuildFile; fileRef = 91188FCA2D573EE500F813ED /* default-v0.realm */; };
 		9141F7552D549CAB006E7D37 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9141F74F2D549CAB006E7D37 /* Preview Assets.xcassets */; };
 		9141F7562D549CAB006E7D37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9141F7512D549CAB006E7D37 /* Assets.xcassets */; };
 		9141F7572D549CAB006E7D37 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9141F7522D549CAB006E7D37 /* ContentView.swift */; };
@@ -40,7 +41,7 @@
 		9141F7C12D54B9F1006E7D37 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9141F77E2D54B9F1006E7D37 /* Constant.swift */; };
 		9141F7C22D54B9F1006E7D37 /* AboutScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9141F7992D54B9F1006E7D37 /* AboutScreen.swift */; };
 		9141F7C32D54B9F1006E7D37 /* HiNav+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9141F7702D54B9F1006E7D37 /* HiNav+Ex.swift */; };
-		9141F7C42D54B9F1006E7D37 /* LanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9141F78C2D54B9F1006E7D37 /* LanguageCell.swift */; };
+		9141F7C42D54B9F1006E7D37 /* RepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9141F78C2D54B9F1006E7D37 /* RepoCell.swift */; };
 		9141F7C62D54B9F1006E7D37 /* DashboardReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9141F78F2D54B9F1006E7D37 /* DashboardReducer.swift */; };
 		9141F7C72D54B9F1006E7D37 /* PersonalScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9141F79D2D54B9F1006E7D37 /* PersonalScreen.swift */; };
 		9141F7C82D54B9F1006E7D37 /* PopupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9141F7832D54B9F1006E7D37 /* PopupManager.swift */; };
@@ -63,12 +64,12 @@
 		9141F7DA2D54BA1A006E7D37 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 9141F7D92D54BA1A006E7D37 /* ComposableArchitecture */; };
 		9141F7DC2D54BA1A006E7D37 /* DependenciesAdditions in Frameworks */ = {isa = PBXBuildFile; productRef = 9141F7DB2D54BA1A006E7D37 /* DependenciesAdditions */; };
 		9141F7DE2D54BC92006E7D37 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9141F7DD2D54BC92006E7D37 /* Launch Screen.storyboard */; };
-		9141F7E02D54BDE3006E7D37 /* default-v0.realm in Resources */ = {isa = PBXBuildFile; fileRef = 9141F7DF2D54BDE3006E7D37 /* default-v0.realm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		00CB69640C73899D18586129 /* Pods_IOSTemplateWithTCA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOSTemplateWithTCA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B65E7F0CAC9DA027EBE6297 /* Pods-IOSTemplateWithTCA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSTemplateWithTCA.release.xcconfig"; path = "Target Support Files/Pods-IOSTemplateWithTCA/Pods-IOSTemplateWithTCA.release.xcconfig"; sourceTree = "<group>"; };
+		91188FCA2D573EE500F813ED /* default-v0.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "default-v0.realm"; sourceTree = "<group>"; };
 		9141F73E2D549C6B006E7D37 /* IOSTemplateWithTCA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSTemplateWithTCA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9141F74F2D549CAB006E7D37 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9141F7512D549CAB006E7D37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -105,7 +106,7 @@
 		9141F7862D54B9F1006E7D37 /* OCHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCHelper.m; sourceTree = "<group>"; };
 		9141F7882D54B9F1006E7D37 /* AliyunProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AliyunProvider.swift; sourceTree = "<group>"; };
 		9141F78B2D54B9F1006E7D37 /* AboutLogoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutLogoCell.swift; sourceTree = "<group>"; };
-		9141F78C2D54B9F1006E7D37 /* LanguageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCell.swift; sourceTree = "<group>"; };
+		9141F78C2D54B9F1006E7D37 /* RepoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCell.swift; sourceTree = "<group>"; };
 		9141F78E2D54B9F1006E7D37 /* AboutReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutReducer.swift; sourceTree = "<group>"; };
 		9141F78F2D54B9F1006E7D37 /* DashboardReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardReducer.swift; sourceTree = "<group>"; };
 		9141F7902D54B9F1006E7D37 /* FavoriteReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteReducer.swift; sourceTree = "<group>"; };
@@ -128,7 +129,6 @@
 		9141F7A52D54B9F1006E7D37 /* LanguageList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LanguageList.json; sourceTree = "<group>"; };
 		9141F7A82D54B9F1006E7D37 /* default-v0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "default-v0.swift"; sourceTree = "<group>"; };
 		9141F7DD2D54BC92006E7D37 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		9141F7DF2D54BDE3006E7D37 /* default-v0.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "default-v0.realm"; sourceTree = "<group>"; };
 		91B5B0F62D5707A800F6983D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		B2521D9D9661463D3A733E04 /* Pods-IOSTemplateWithTCA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSTemplateWithTCA.debug.xcconfig"; path = "Target Support Files/Pods-IOSTemplateWithTCA/Pods-IOSTemplateWithTCA.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -302,7 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				9141F78B2D54B9F1006E7D37 /* AboutLogoCell.swift */,
-				9141F78C2D54B9F1006E7D37 /* LanguageCell.swift */,
+				9141F78C2D54B9F1006E7D37 /* RepoCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -370,7 +370,7 @@
 			isa = PBXGroup;
 			children = (
 				9141F7A82D54B9F1006E7D37 /* default-v0.swift */,
-				9141F7DF2D54BDE3006E7D37 /* default-v0.realm */,
+				91188FCA2D573EE500F813ED /* default-v0.realm */,
 			);
 			path = realm;
 			sourceTree = "<group>";
@@ -452,7 +452,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9141F7E02D54BDE3006E7D37 /* default-v0.realm in Resources */,
+				91188FCB2D573EE500F813ED /* default-v0.realm in Resources */,
 				9141F7552D549CAB006E7D37 /* Preview Assets.xcassets in Resources */,
 				9141F7652D54AD28006E7D37 /* Localizable.strings in Resources */,
 				9141F7682D54AD37006E7D37 /* Constant.strings in Resources */,
@@ -573,7 +573,7 @@
 				9141F7C12D54B9F1006E7D37 /* Constant.swift in Sources */,
 				9141F7C22D54B9F1006E7D37 /* AboutScreen.swift in Sources */,
 				9141F7C32D54B9F1006E7D37 /* HiNav+Ex.swift in Sources */,
-				9141F7C42D54B9F1006E7D37 /* LanguageCell.swift in Sources */,
+				9141F7C42D54B9F1006E7D37 /* RepoCell.swift in Sources */,
 				9141F7C62D54B9F1006E7D37 /* DashboardReducer.swift in Sources */,
 				9141F7C72D54B9F1006E7D37 /* PersonalScreen.swift in Sources */,
 				9141F7C82D54B9F1006E7D37 /* PopupManager.swift in Sources */,

@@ -57,9 +57,10 @@ struct RootReducer {
                 state.tabBarItemType = tabBarItemType
                 return .none
             case .load:
-                log("展示了root")
                 return .run { send in
+                    // 1. 如下代码用于注入数据库种子数据
                     // _ = await DatabaseManager.shared.exampleData().asResult()
+                    // 2. 如下代码用于初始化数据库，得到Profile对象
                     await send(.databaseInitialized(await self.databaseInitialize()))
                 }.cancellable(id: CancelID.load)
             case let .login(tabBarItemType):
